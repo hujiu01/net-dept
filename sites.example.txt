@@ -1,0 +1,6 @@
+# 站点体检列表
+# 每行一个 URL，# 开头为注释
+# 复制为 sites.local.txt 后填入真实站点（该文件已被 gitignore）
+
+https://example.com
+https://example.org

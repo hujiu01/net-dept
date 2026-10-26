@@ -88,6 +88,30 @@ cp -r net-dept ~/.workbuddy/skills/
 客户说太贵了，怎么回
 ```
 
+## 自动化
+
+`scripts/` 里有三个零依赖脚本，只用 Python 标准库，不需要 pip install：
+
+```bash
+# 站点体检：状态码、响应耗时、SSL 剩余天数、robots、sitemap
+python3 scripts/site_check.py --file sites.txt
+
+# 死链扫描：从 sitemap 提取 URL 逐个查，支持 sitemapindex
+python3 scripts/link_check.py --sitemap https://example.com/sitemap.xml
+
+# 定时任务心跳：解决 cron 静默失败
+python3 scripts/heartbeat.py beat --dir /var/hb --name daily-push
+python3 scripts/heartbeat.py check --dir /var/hb --max-age 26
+```
+
+三个都支持退出码非 0，直接接 `||` 就能报警：
+
+```bash
+0 * * * * cd /opt/net-dept && python3 scripts/site_check.py --file sites.txt >> /var/log/site.log 2>&1 || echo "站点异常" | mail -s "告警" you@example.com
+```
+
+`references/automation.md` 里有完整清单 —— 12 项可自动化的按投入产出排了序，也包括**哪些不该自动化**：选题判断、归因分析、改版决策、内容合规，这些交给机器的结果是看着有产出、实际没有。还有 crontab 示例和六个必踩的坑（时区、PATH、工作目录、并发、日志膨胀、依赖漂移）。
+
 ## 目录结构
 
 ```
@@ -101,6 +125,7 @@ net-dept/
 │   ├── profile.local.md        你自己的业务档案（不提交）
 │   ├── workflow.md             5 条链路 + 每日循环
 │   ├── metrics.md              指标口径（同一个数怎么算）
+│   ├── automation.md           自动化清单 + 哪些不能自动
 │   └── roles/
 │       ├── lead.md             负责人（决策层）
 │       ├── competitor.md       含每日数据整理
@@ -108,11 +133,15 @@ net-dept/
 │       ├── seo.md
 │       ├── brand.md
 │       └── service.md
-└── assets/
-    ├── competitor-matrix.md    竞品对比表
-    ├── daily-report.md         每日数据日报
-    ├── publish-checklist.md    发布验收清单
-    └── weekly-report.md        周报模板
+├── assets/
+│   ├── competitor-matrix.md    竞品对比表
+│   ├── daily-report.md         每日数据日报
+│   ├── publish-checklist.md    发布验收清单
+│   └── weekly-report.md        周报模板
+└── scripts/
+    ├── site_check.py           站点体检（状态码/耗时/SSL/sitemap）
+    ├── link_check.py           死链扫描
+    └── heartbeat.py            定时任务心跳
 ```
 
 ## 设计取舍

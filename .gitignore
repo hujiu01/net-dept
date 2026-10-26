@@ -13,8 +13,13 @@ desktop.ini
 .vscode/
 *.swp
 
-# 依赖（如后续加入脚本）
+# 依赖与缓存
 node_modules/
 __pycache__/
 *.pyc
 .venv/
+
+# 心跳数据与临时输出
+tmp_hb/
+hb/
+sites.local.txt
