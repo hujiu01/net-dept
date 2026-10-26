@@ -1,0 +1,20 @@
+# 本地业务档案，含真实报价、资质、供应商信息，不要提交
+references/profile.local.md
+
+# 产出物
+outputs/
+*.local.md
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# 依赖（如后续加入脚本）
+node_modules/
+__pycache__/
+*.pyc
+.venv/
