@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
-"""定时任务心跳：给每个定时任务加一个"上次成功跑完"的时间戳，
-超期未更新就报警。
+"""Cron heartbeat: stamp a "last successful run" time for each scheduled job and
+alert when it goes stale.
 
-解决的问题：cron 任务静默失败 —— 没报错、没产出，两周后才发现。
-脚本跑成功就留一个心跳，另一个任务定期检查心跳，超期立即报警。
+Solves silent failure: a cron job that stops producing output without erroring
+can go unnoticed for weeks. Add a beat on success, check the beats separately.
 
-只依赖 Python 标准库。
+Standard library only.
 
-用法：
-    # 1. 在每个定时任务成功结束时调用（放在脚本最后一行）
-    python heartbeat.py beat --dir /var/hb --name baidu-push
+Usage:
+    # 1. At the successful end of every scheduled job
+    python heartbeat.py beat --dir /var/hb --name daily-push
 
-    # 2. 单独一个每日任务检查所有心跳
+    # 2. A separate daily job checks all heartbeats
     python heartbeat.py check --dir /var/hb --max-age 26
 
-    # 3. 只查某几个任务，单独设阈值（小时）
-    python heartbeat.py check --dir /var/hb --expect baidu-push=26 --expect backup=50
+    # 3. Per-job thresholds (hours)
+    python heartbeat.py check --dir /var/hb --expect daily-push=26 --expect backup=50
 
-退出码：
-    beat   永远 0
-    check  全部正常 0，有超期 1
+Exit codes:
+    beat   always 0
+    check  0 when all fresh, 1 when anything is overdue
 """
 
 import argparse
@@ -74,8 +74,8 @@ def do_check(args):
 
     items = load_beats(args.dir)
     if not items:
-        print(f"没有找到任何心跳记录（目录：{args.dir}）")
-        print("检查任务是否真的在跑，或者 beat 命令有没有被调用。")
+        print(f"No heartbeat records found (dir: {args.dir})")
+        print("Check whether the job actually runs, or whether `beat` is being called at all.")
         return 1
 
     rows = []
@@ -83,13 +83,13 @@ def do_check(args):
     for it in items:
         limit = expects.get(it["name"], args.max_age)
         if it["hours"] is None:
-            status = "记录损坏"
+            status = "corrupt record"
             overdue.append((it["name"], status))
         elif it["hours"] > limit:
-            status = f"超期（阈值 {limit:g}h）"
+            status = f"overdue (limit {limit:g}h)"
             overdue.append((it["name"], status))
         else:
-            status = "正常"
+            status = "ok"
         rows.append({**it, "limit": limit, "status": status})
 
     if args.json:
@@ -109,8 +109,8 @@ def do_check(args):
         ))
         return 1 if overdue else 0
 
-    print(f"## 定时任务心跳 · {now_utc().strftime('%Y-%m-%d %H:%M')} UTC\n")
-    print("| 任务 | 上次心跳（UTC） | 距今 | 阈值 | 状态 |")
+    print(f"## Cron heartbeat · {now_utc().strftime('%Y-%m-%d %H:%M')} UTC\n")
+    print("| Job | Last beat (UTC) | Age | Limit | Status |")
     print("|---|---|---|---|---|")
     for r in rows:
         last = r["ts"].strftime("%Y-%m-%d %H:%M") if r["ts"] else str(r.get("raw"))[:16]
@@ -118,30 +118,30 @@ def do_check(args):
         print(f"| {r['name']} | {last} | {ago} | {r['limit']:g}h | {r['status']} |")
 
     if overdue:
-        print(f"\n**{len(overdue)} 个任务超期**，按顺序排查：")
-        print("1. 任务本身有没有跑（看 crontab）")
-        print("2. 跑了但有报错（看日志）")
-        print("3. 跑完但没调用 beat（代码路径问题）")
-        print("4. 主机时区或系统时间错误")
+        print(f"\n**{len(overdue)} job(s) overdue** — check in this order:")
+        print("1. Did the job run at all (check crontab)")
+        print("2. Did it run and error (check logs)")
+        print("3. Did it run but never reach the beat call (code path)")
+        print("4. Is the host timezone or system clock wrong")
         return 1
-    print("\n全部正常。")
+    print("\nAll good.")
     return 0
 
 
 def main():
-    ap = argparse.ArgumentParser(description="定时任务心跳")
+    ap = argparse.ArgumentParser(description="Cron heartbeat")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    b = sub.add_parser("beat", help="记录一次成功心跳")
+    b = sub.add_parser("beat", help="record a successful run")
     b.add_argument("--dir", required=True)
     b.add_argument("--name", required=True)
     b.set_defaults(func=do_beat)
 
-    c = sub.add_parser("check", help="检查心跳是否超期")
+    c = sub.add_parser("check", help="check for stale heartbeats")
     c.add_argument("--dir", required=True)
-    c.add_argument("--max-age", type=float, default=26, help="默认阈值（小时）")
-    c.add_argument("--expect", action="append", help="单独设阈值，格式 name=hours，可重复")
-    c.add_argument("--json", action="store_true", help="输出 JSON")
+    c.add_argument("--max-age", type=float, default=26, help="default threshold in hours")
+    c.add_argument("--expect", action="append", help="per-job threshold as name=hours, repeatable")
+    c.add_argument("--json", action="store_true", help="JSON output")
     c.set_defaults(func=do_check)
 
     args = ap.parse_args()

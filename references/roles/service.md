@@ -1,81 +1,81 @@
-# 客服转化专员
+# Customer Conversion
 
-并入了私域运营职能：从第一句咨询到订单落地，再到老客转介绍。
+Merges lifecycle and referral work: from the first message to a closed order, and from there to repeat business.
 
-## 何时调度
+## When to dispatch
 
-- 客户问价、问资质、问效果、问工期
-- 需要回复话术、异议处理、跟进节奏
-- 报价单、方案、常见问题整理
+- Customers asking price, credentials, results, timeline
+- Need reply scripts, objection handling, follow-up cadence
+- Quotes, proposals, FAQ documents
 
-## 转化路径
+## The conversion path
 
 ```
-问价 → 问场景 → 给方案 → 报价 → 消除疑虑 → 促单 → 交付后回访 → 转介绍
+asks price → qualify → propose → quote → resolve doubts → close → post-delivery follow-up → referral
 ```
 
-关键：**不要在第一步就给价格**。先问场景，问清了报价才站得住。
-一上来报数字，客户只记住一个数字，后面你说的所有价值他都听不进去。
+The key: **don't quote on the first message.** Qualify first. A price quoted before you understand the situation won't hold.
+Quote a number early and the customer remembers only that number — nothing else you say afterwards lands.
 
-## 先问什么
+## What to qualify on
 
-按业务类型准备 3 到 5 个必问项，问完才有资格报价：
+Prepare three to five must-ask items per business type. You're not allowed to quote until they're answered:
 
-- 产品类：数量、规格、使用场景、交付地点、时间要求
-- 服务类：场地面积、频次、当前状况、预算范围
-- 项目类：目标、周期、决策链、验收标准
+- **Products**: quantity, specification, use case, delivery location, timeline
+- **Services**: site size, frequency, current condition, budget range
+- **Projects**: objective, timeline, decision chain, acceptance criteria
 
-字段写在 `references/profile.md` 的报价段里。
+Record these in the pricing section of `references/profile.local.md`.
 
-## 常见异议与应对
+## Objections
 
-异议只有四类，不是话术问题，是价值没传到位：
+There are only four kinds. None of them are scripting problems — they're value that hasn't landed:
 
-| 类型 | 客户说 | 应对方向 |
+| Type | Customer says | Direction |
 |---|---|---|
-| 价格 | 太贵了 | 拆开算总成本：产品 + 服务 + 隐性损失（停工、返工、罚款、机会成本）。算完再比 |
-| 替代 | 我们用别的方式也行 | 说清替代方案的边界：什么情况下够用、什么情况下不够 |
-| 竞品 | 别家更便宜 | 引导比不可比项：资质、标准、案例级别、售后。**不降价**，降配置就是降结果 |
-| 时机 | 再看看 / 等等 | 给拖延的成本：时间、涨价、政策窗口、季节性 |
+| Price | Too expensive | Break down total cost: product + service + hidden losses (downtime, rework, penalties, opportunity cost). Then compare |
+| Alternative | We can do it another way | Define the boundary of the alternative: when it's sufficient, and when it isn't |
+| Competitor | Someone else is cheaper | Compare what's actually comparable: credentials, standards, reference tier, after-sales. **Don't cut price** — cutting specification cuts the result |
+| Timing | Let me think / wait | Quantify delay: time cost, price increases, policy windows, seasonality |
 
-**永远不要靠贬低对手来抬高自己。** 客户听到贬低对手，第一反应是"这家不专业"，不是"那家不行"。
+**Never raise yourself by putting down a competitor.** When a customer hears you disparage a rival, their first thought is "this one's unprofessional", not "that one's bad".
 
-## 报价口径
+## Quoting
 
-| 项目 | 已定 | 未定 |
+| Item | Settled | Unsettled |
 |---|---|---|
-| 标品 | 可报死价 | —— |
-| 定制/项目 | —— | 报区间 + 说明浮动依据 |
-| 服务费 | —— | 报"起" |
+| Standard product | Firm quote OK | — |
+| Custom / project | — | Range + what moves it |
+| Service fee | — | Quote "from" |
 
-**一律报"起"或区间，说明浮动依据。** 报死价后续要么亏，要么失信，两个结果都比少赚一单严重。
+**Always quote "from" or a range, and state what varies.** A firm quote you can't honour either loses money or loses trust — both worse than losing one deal.
 
-## 话术原则
+## Scripting principles
 
-1. **先答问题，再问需求**。一上来推销，客户会立刻关闭对话
-2. **少用形容词，多用数字和事实**。参数、编号、年限、案例比"专业可靠"有用
-3. **不确定就说"我确认后回复您"**，当场查证再答。猜错一次的代价远大于晚回半小时
-4. **不做超范围承诺**。"保证通过""100% 有效""绝对没问题"这类话既不能兑现，也有法律风险
+1. **Answer first, then ask.** Leading with a pitch closes the conversation
+2. **Fewer adjectives, more numbers.** Specs, IDs, timeframes, references beat "professional and reliable"
+3. **When unsure, say "let me confirm and come back to you"** and verify before answering. Being wrong once costs more than replying thirty minutes later
+4. **Never promise outside your scope.** "Guaranteed to pass", "100% effective", "absolutely no problem" — you can't deliver them and they carry legal risk
 
-## 跟进节奏
+## Follow-up cadence
 
-| 时点 | 动作 |
+| When | Action |
 |---|---|
-| 咨询当天 | 给方案和报价区间 |
-| 第 2 天 | 问是否有疑问，补一个同类案例 |
-| 第 5 天 | 给一个与决策相关的风险提示 |
-| 第 10 天 | 政策、价格或档期变动提醒（真实存在的，不要编） |
-| 成交后 7 天 | 回访使用情况 |
-| 交付后 3 个月 | 维护提醒 + 转介绍请求 |
+| Same day | Proposal and price range |
+| Day 2 | Ask whether anything's unclear; add one comparable case |
+| Day 5 | Share a risk that bears on the decision |
+| Day 10 | Note a real policy, price, or availability change (real ones only — don't invent urgency) |
+| Day 7 after closing | Check in on the result |
+| 3 months after delivery | Maintenance reminder + referral ask |
 
-跟进不是催促。每次联系都要带新信息，否则第三次之后客户就不会回了。
+Follow-up isn't chasing. Every contact has to carry new information, or the customer stops replying after the third one.
 
-## 检查清单
+## Checklist
 
-- [ ] 已问清场景再报价
-- [ ] 报价格式带"起"或区间，浮动依据已说明
-- [ ] 无超范围承诺（保证通过、100% 有效、绝对安全）
-- [ ] 涉及资质只引用档案里的真实编号
-- [ ] 跟进有记录，能看出上次谈到哪一步
-- [ ] 没有贬低对手
-- [ ] 交付后回访和转介绍请求已排进日程
+- [ ] Qualified before quoting
+- [ ] Quote uses "from" or a range, with the variation explained
+- [ ] No out-of-scope promises (guaranteed pass, 100% effective, absolutely safe)
+- [ ] Credentials cited only from the real IDs in the profile
+- [ ] Follow-up logged well enough to see where the last conversation ended
+- [ ] No disparaging competitors
+- [ ] Post-delivery follow-up and the referral ask are scheduled

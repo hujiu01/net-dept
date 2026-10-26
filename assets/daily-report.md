@@ -1,92 +1,92 @@
-# 每日数据日报
+# Daily Data Report
 
-> 复盘日期：____ 年 __ 月 __ 日　｜　填写时间：每日 09:00 前
-> 只写昨天的数据。**5 分钟内能看完**，超了说明写多了。
+> Reporting for: ____ / ____ / ______  ·  Filled by 09:00 daily
+> Yesterday's numbers only. **Readable in under 5 minutes** — longer means too much was written.
 
-## 一句话结论
+## One-line takeaway
 
-> 今天的数字说明了什么？用一句话写。写不出来，说明数据还没看懂，先别看下一节。
+> What do today's numbers say? One sentence. If you can't write it, the data doesn't make sense yet — don't read the next section.
 
 ---
 
-## 一、昨日发布
+## 1. Yesterday's publishing
 
-| 平台 | 标题 | 链接 | 主打词 | 状态 |
+| Platform | Headline | URL | Target term | Status |
 |---|---|---|---|---|
 | | | | | |
 
-| 统计 | 数量 |
+| Count | Number |
 |---|---|
-| 自有站点发布 | |
-| 第三方平台发布 | |
-| 计划内但未发 | |
-| 未发原因 | |
+| Owned site pieces | |
+| Third-party platform pieces | |
+| Planned but not published | |
+| Why not published | |
 
-> 未发的原因要写清是缺素材、审核没过、还是排期调整。写"没时间"没有信息量。
+> State whether it was missing assets, failed review, or a schedule change. "No time" conveys nothing.
 
-## 二、收录状态
+## 2. Indexing status
 
-| 内容 | 发布日 | 平台 / 搜索引擎 | 是否收录 | 用了几 天 |
+| Content | Published | Platform / engine | Indexed | Days taken |
 |---|---|---|---|---|
 
-| 分类 | 数量 | 处理 |
+| Category | Count | Action |
 |---|---|---|
-| 昨日新增收录 | | 无 |
-| 待观察（发布未满 3 天） | | 无 |
-| 已满 3 天未收录 | | 3 天内再查 |
-| **超 7 天未收录** | | **走收录异常排查，不要继续堆内容** |
+| Newly indexed yesterday | | none |
+| Pending (under 3 days) | | none |
+| 3+ days, not indexed | | recheck within 3 days |
+| **7+ days, not indexed** | | **run index troubleshooting — don't publish more** |
 
-## 三、站点数据
+## 3. Site traffic
 
-| 指标 | 昨日 | 前日 | 近 7 日均 | 变化 |
+| Metric | Yesterday | Day before | 7-day avg | Change |
 |---|---|---|---|---|
-| 访客数（UV） | | | | |
-| 浏览量（PV） | | | | |
-| 新访客占比 | | | | |
-| 平均停留时长 | | | | |
-| 跳出率 | | | | |
+| Users (UV) | | | | |
+| Pageviews (PV) | | | | |
+| New visitor share | | | | |
+| Avg. session duration | | | | |
+| Bounce rate | | | | |
 
-来源构成：
+Source mix:
 
-| 来源 | 占比 | 变化 | 说明 |
+| Source | Share | Change | Note |
 |---|---|---|---|
-| 自然搜索 | | | |
-| 直接访问 | | | |
-| 外部链接 | | | |
-| 社交媒体 | | | |
-| 付费 | | | |
+| Organic search | | | |
+| Direct | | | |
+| Referral | | | |
+| Social | | | |
+| Paid | | | |
 
-> 访客涨了但咨询没涨，通常是来源结构问题 —— 看是哪一类来源涨的。
-> 直接访问异常高时先怀疑统计代码重复触发，不是品牌力突然变强。
+> Visitors up but inquiries flat usually means a source-mix problem — check which source grew.
+> Abnormally high direct traffic is usually a double-firing tracking tag, not a sudden surge in brand strength.
 
-## 四、关键词展现
+## 4. Keyword impressions
 
-| 关键词 | 展现 | 点击 | 点击率 | 平均排名 | 排名变化 |
+| Keyword | Impressions | Clicks | CTR | Avg. position | Position change |
 |---|---|---|---|---|---|
 
-三类要单独拎出来，它们直接决定明天写什么：
+Three categories must be pulled out separately. They determine what gets written tomorrow:
 
-| 分类 | 关键词 | 说明 |
+| Category | Keywords | Meaning |
 |---|---|---|
-| **新出现有展现的词** | | 新的需求信号，优先做内容 |
-| **排名明显下滑** | | 查是内容过时、对手加码还是被降权 |
-| **核心词零展现** | | 要么没做内容，要么做了没收录 |
+| **Newly showing impressions** | | New demand signal — prioritise content |
+| **Notable ranking drops** | | Check for outdated content, competitor moves, or a penalty |
+| **Head terms with zero impressions** | | Either no content exists, or it exists and isn't indexed |
 
-## 五、异常与待办
+## 5. Anomalies and actions
 
-### 异常
+### Anomalies
 
-| 类型 | 现象 | 判断 |
+| Type | Symptom | Assessment |
 |---|---|---|
-| 数据异常 | 任一指标较 7 日均波动超 30% | 说明原因，不要只记录 |
-| 任务异常 | 定时任务 / 发布 / 推送失败 | 指明哪个任务、失败几次 |
-| 内容异常 | 被限流、被下架、待审核超 24h | 记录平台反馈 |
+| Data | Any metric moved 30%+ vs the 7-day average | Explain it — don't just record it |
+| Job | Scheduled job, publish, or submission failed | Name the job and how many times |
+| Content | Throttled, removed, or pending review over 24h | Record the platform's response |
 
-> 波动不到 30% 的不用写进异常。日常噪声不值得分析，写了反而淹掉真正的问题。
+> Anything under 30% doesn't belong here. Daily noise isn't worth analysing and will bury the real signal.
 
-### 今日必做
+### Today's must-dos
 
-只写 1 到 3 件。写多了等于没排优先级。
+One to three. More means you haven't prioritised.
 
 1.
 2.
@@ -94,21 +94,21 @@
 
 ---
 
-## 数据来源（固定，不要中途更换）
+## Data sources (fixed — don't switch mid-stream)
 
-| 数据 | 来源 | 采集方式 |
+| Data | Source | Collection |
 |---|---|---|
-| 发布记录 | 各平台后台 | 手动或自动化 |
-| 收录 | 搜索引擎资源平台 / 站长工具 | 手动查询 |
-| 站点流量 | 统计工具 | 自动 |
-| 关键词展现 | 搜索引擎资源平台 | 手动导出 |
+| Publishing | Platform dashboards | manual or automated |
+| Indexing | Search engine webmaster consoles / rank tools | manual query |
+| Site traffic | Analytics | automated |
+| Keyword impressions | Search engine resource console | manual export |
 
-**换工具必须在日报里注明换的那一天**，否则曲线会出现无法解释的跳变。
+**If a tool changes, note the date in the report** — otherwise the trend line shows an unexplained jump.
 
 ---
 
-### 写日报的三个规矩
+### Three rules for writing this
 
-1. **不复述绝对值。** 昨天的访客数是 312 这件事本身没有价值，有价值的是"比 7 日均低 40%，因为周二那篇稿子没被收录"。
-2. **异常必须给原因。** 只写"数据下跌"等于没写。判断不出来就写"待查，明日给结论"，然后明天真的给。
-3. **待办不超过 3 件。** 日报的作用是让今天有重点，不是让今天有 10 个任务。
+1. **Don't restate absolutes.** "312 visitors yesterday" has no value. "40% below the 7-day average because Tuesday's piece still isn't indexed" does.
+2. **Every anomaly needs a cause.** "Traffic dropped" is not an entry. If you can't determine it, write "investigating, answer tomorrow" — then deliver it.
+3. **Three action items maximum.** The report exists to give today a focus, not ten tasks.

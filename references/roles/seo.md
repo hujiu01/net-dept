@@ -1,94 +1,94 @@
-# SEO优化师
+# SEO Specialist
 
-并入了 GEO（AI 搜索优化）与分发规范职能：传统搜索、AI 搜索、分发策略，三条腿。
+Merges GEO (AI search optimization) and distribution rules: traditional search, AI search, and distribution strategy — three legs.
 
-**边界**：本岗定规范、定顺序、做发布后的动作。改写和发布执行在编辑岗，站点发布在品牌岗。
+**Boundary**: this role sets rules, order, and post-publish actions. Adaptation and platform publishing belong to the Editor; owned-site publishing belongs to the Brand Operator.
 
-## 何时调度
+## When to dispatch
 
-- 关键词怎么选、标题和 TDK 怎么写、内链怎么布
-- 收录率低、排名不动、流量下滑
-- 想让内容被 AI 搜索引用（豆包、DeepSeek、Kimi、元宝、文心、Perplexity 等）
-- 一篇稿子要定分发顺序、各平台打什么词、什么时间发
+- Keyword selection, titles, meta, internal linking
+- Index rate is low, rankings are stuck, traffic is falling
+- Getting cited by AI search (ChatGPT, Perplexity, Gemini, Doubao, DeepSeek, Kimi, Yuanbao, Wenxin, Baidu AI)
+- Deciding distribution order, per-platform target terms, and timing
 
-## 三个战场
+## Three battlegrounds
 
-| 战场 | 目标 | 关键动作 |
+| Battleground | Goal | Key actions |
 |---|---|---|
-| 传统 SEO | 搜索结果收录与排名 | 关键词布局、站内结构、内链、sitemap、主动推送 |
-| GEO | 被 AI 搜索引用 | 结构化答案、事实密度、权威来源、llms.txt |
-| 分发规范 | 多平台曝光最大化 | 定顺序、定各平台标题词、定时间点 |
+| Traditional SEO | Indexing and ranking in search results | Keyword placement, site structure, internal links, sitemap, active submission |
+| GEO | Being cited by AI search | Structured answers, fact density, authoritative sourcing, `llms.txt` |
+| Distribution rules | Maximum multi-platform reach | Set order, set per-platform terms, set timing |
 
-### GEO 和传统 SEO 的区别（最容易做错的地方）
+### GEO vs traditional SEO (the most common mistake)
 
-传统 SEO 讨好爬虫：关键词密度、外链数量、页面结构。
-GEO 讨好模型：它要的是**可以直接摘取的确定答案**。
+Traditional SEO pleases crawlers: keyword density, backlinks, page structure.
+GEO pleases models: what they want is **a definite answer they can extract directly**.
 
-所以：
+So:
 
-- 每段开头先给结论句，再解释
-- 关键事实写成可独立引用的短句："该产品执行标准为 XXX"比"符合国家标准"有用得多
-- 数字、型号、证书编号写全，含糊表述模型不会引用
-- 页面加 FAQ 区块，问题用客户的原始问法
-- 维护 `llms.txt`，告诉模型这个站讲什么、哪些页面可信
-- 同一事实在多个权威页面重复出现，被引用的概率显著上升
+- Lead each paragraph with the conclusion, then explain
+- Write key facts as standalone quotable sentences: "the governing standard is X" beats "compliant with national standards"
+- Spell out numbers, model numbers, certificate IDs — vague phrasing doesn't get cited
+- Add an FAQ block using the customer's own wording
+- Maintain `llms.txt` telling models what the site covers and which pages are trustworthy
+- Repeat the same fact across several authoritative pages; citation probability rises sharply
 
-## 关键词分层
+## Keyword tiers
 
-1. **主词**：业务的核心品类词 —— 必须拿下，投入最多
-2. **场景词**：客户在什么情况下需要你
-3. **疑问词**：多少钱、必须吗、怎么选、多久换 —— GEO 的主战场
-4. **地域词**：城市 + 品类，本地生意的主要来源
+1. **Head terms**: the core category term — must win, biggest investment
+2. **Situation terms**: when customers need you
+3. **Question terms**: how much, is it required, how to choose, how often to replace — the GEO battleground
+4. **Local terms**: city + category — the main source for local businesses
 
-疑问词最容易被忽略，也最容易见效。AI 搜索的提问方式就是疑问句。
+Question terms are the most neglected and the fastest to pay off. AI search is asked in questions.
 
-## 站内检查项
+## On-page checklist
 
-- [ ] 每页唯一 title，主词前置，不超长
-- [ ] description 有信息量，每页不同，不复用
-- [ ] H1 唯一，H2 覆盖子话题
-- [ ] 内链：新稿至少链向 2 个老页面，老页面回链 1 次
-- [ ] 图片 alt 描述具体内容，不写"图片1"
-- [ ] sitemap 已更新并提交
-- [ ] 移动端速度达标，首屏可交互时间控制在 3 秒内
-- [ ] 结构化数据（Product / FAQ / Article）已部署
+- [ ] Unique title per page, head term first, not overlong
+- [ ] Description has substance, unique per page, never reused
+- [ ] Single H1, H2s covering sub-topics
+- [ ] Internal links: each new piece links to 2+ older pages; older pages link back once
+- [ ] Image alt text describes the content, not "image1"
+- [ ] Sitemap updated and submitted
+- [ ] Mobile speed acceptable — interactive within 3s
+- [ ] Structured data deployed (Product / FAQ / Article)
 
-## 收录异常的排查顺序
+## Index troubleshooting order
 
-不要一上来就归因于"内容质量差"。按成本从低到高查：
+Don't jump to "the content is low quality". Go from cheapest to most expensive:
 
-1. **robots.txt** 和 meta robots 是否误屏蔽
-2. **sitemap** 是否可正常访问、是否包含新页面
-3. **CDN 或缓存** 是否返回了旧页面
-4. **状态码** 是否正常（301 链路过长、302 滥用、大量 404）
-5. **重复内容** 是否多 URL 指向同一页面
-6. **索引量 vs 提交量**：长期大批量不收录，多半是站点质量或抓取预算问题，继续堆内容只会更糟
-7. 最后才怀疑内容本身
+1. **robots.txt** and meta robots accidentally blocking
+2. **sitemap** reachable, and containing the new pages
+3. **CDN or cache** serving a stale page
+4. **Status codes** (overlong 301 chains, 302 misuse, mass 404s)
+5. **Duplicate content** — multiple URLs serving the same page
+6. **Indexed vs submitted volume**: large batches never indexing usually means a site-quality or crawl-budget issue. Publishing more makes it worse
+7. Only then suspect the content itself
 
-**判断标准**：如果收录率长期停在某个很低的比例不动，加内容不会有改善，问题在索引层。
+**The tell**: if index rate has been pinned at a very low percentage without moving, adding content won't help. The problem is in the indexing layer.
 
-## 分发规范（本岗定，编辑岗执行）
+## Distribution rules (set here, executed by Editor)
 
-**改写动作不归本岗** —— 改的人必须是写的人，否则语境会散。本岗只给规则：
+**Adaptation isn't this role's job** — the person adapting must be the person who wrote it, or the context falls apart. This role supplies the rules:
 
-1. **顺序**：先发自有站点，隔 1–2 天再发第三方平台。倒过来会让主站变成"转载站"，权重白送
-2. **标题**：同一个词不要在所有平台用同一个标题。主站吃主词，平台吃长尾和疑问词
-3. **主打词**：每个平台指定 1 个词，不要全平台打同一个，否则自己跟自己抢
-4. **时间点**：按目标读者的活跃时段排，同一天不超过 2 个平台，避免自己分流
-5. **禁止**：直接复制粘贴到多平台，等于给主站制造重复内容，还可能被平台判为低质
+1. **Order**: publish on the owned site first, wait 1–2 days, then third-party platforms. Reversed, the main site becomes a reprint site and hands away its authority
+2. **Titles**: don't use the same title for the same term everywhere. The main site takes head terms; platforms take long-tail and question terms
+3. **Target term per platform**: one per platform. Don't chase the same term everywhere — you end up competing with yourself
+4. **Timing**: match reader activity windows. No more than two platforms in one day, or you split your own traffic
+5. **Forbidden**: copy-paste across platforms creates duplicate content against your main site and may be judged low-quality by the platform
 
-## 发布之后本岗做什么
+## After publishing
 
-发布不是终点。这三件事没人做，内容就白发了：
+Publishing isn't the finish line. Nobody doing these three means the content was wasted:
 
-1. **收录提交**：主动推送 / IndexNow，新页面当天提
-2. **索引检查**：3 天后确认是否收录，未收录走上面的排查顺序
-3. **数据回看**：7 天看点击和停留，14 天看排名变化。无起色的调方向，不要继续按原样发
+1. **Submit for indexing**: active submission / IndexNow, same day the page goes live
+2. **Check indexing**: confirm after 3 days; if not indexed, run the troubleshooting order above
+3. **Review data**: clicks and dwell at 7 days, ranking movement at 14 days. If it hasn't moved, change direction rather than repeating the same thing
 
-## 检查清单
+## Checklist
 
-- [ ] 每篇内容标注了目标关键词和对应战场（SEO / GEO / 分发）
-- [ ] GEO 稿每段有可摘取的结论句
-- [ ] 分发规范已交编辑岗（顺序、各平台主打词、时间点）
-- [ ] 发布后已提交收录推送
-- [ ] 效果监测有基线：改之前的数据存下来了，否则无法判断是否有效
+- [ ] Every piece tagged with its target term and battleground (SEO / GEO / distribution)
+- [ ] GEO pieces have an extractable conclusion sentence in each paragraph
+- [ ] Distribution rules delivered to the Editor (order, per-platform terms, timing)
+- [ ] Index submission done after publishing
+- [ ] Measurement has a baseline: the pre-change numbers were saved, or you can't tell whether it worked

@@ -1,90 +1,90 @@
-# 指标口径
+# Metric Definitions
 
-数据工作的第一杀手不是采不到数，是**同一个指标每次算得不一样**。这份文件定死口径，谁算都一样。
+The biggest killer in data work isn't failing to collect numbers — it's **computing the same metric differently each time**. This file fixes the definitions so everyone gets the same answer.
 
-## 一、流量指标
+## 1. Traffic
 
-| 指标 | 定义 | 容易算错的地方 |
+| Metric | Definition | Where people get it wrong |
 |---|---|---|
-| **访客数（UV）** | 统计周期内去重后的访问人数 | 同一人换设备或清 Cookie 会被重复计；不同工具去重逻辑不同 |
-| **浏览量（PV）** | 页面被打开的总次数 | 刷新算两次；统计代码重复安装会让 PV 虚高到离谱 |
-| **独立 IP** | 去重后的来源 IP 数 | 公司内网、校园网多人共用一个出口 IP，会严重低估 |
-| **新访客占比** | 首次访问人数 / 总访客 | 老客户复购型生意里这个数天然偏低，不是坏事 |
-| **平均停留时长** | 总停留时长 / 会话数 | 单页跳出（只看了 1 页就离开）通常计为 0 秒，会拉低均值 |
-| **跳出率** | 只看 1 页就离开的会话占比 | 内容型页面跳出率高很正常，别当成问题 |
+| **Users (UV)** | Deduplicated visitors in the period | Same person switching device or clearing cookies counts twice; dedup logic differs between tools |
+| **Pageviews (PV)** | Total page opens | Refreshes count twice; a double-installed tracking tag inflates PV absurdly |
+| **Unique IPs** | Deduplicated source IPs | Office and campus networks share one egress IP — badly undercounts |
+| **New visitor share** | First-time visitors ÷ total visitors | Naturally low for repeat-purchase businesses; that's not a problem |
+| **Avg. session duration** | Total time ÷ sessions | Single-page bounces usually record as 0s and drag the average down |
+| **Bounce rate** | Sessions leaving after one page | High bounce is normal for content pages — don't treat it as a fault |
 
-**用哪个**：对外汇报和做趋势看 UV，判断内容吸引力看停留和跳出，别用 PV 判断真实人数。
+**Which to use**: UV for reporting and trends, duration and bounce for judging content appeal. Never use PV as a proxy for people.
 
-## 二、收录指标
+## 2. Indexing
 
-| 指标 | 定义 |
+| Metric | Definition |
 |---|---|
-| 收录数 | 搜索引擎已建立索引的页面数 |
-| 提交数 | 通过 sitemap 或主动推送提交的 URL 数 |
-| 收录率 | 收录数 / 提交数 |
-| 收录延迟 | 从发布到被收录的天数 |
+| Indexed pages | Pages a search engine has added to its index |
+| Submitted pages | URLs pushed via sitemap or active submission |
+| Index rate | Indexed ÷ submitted |
+| Indexing lag | Days from publication to being indexed |
 
-**口径必须写清**：哪个搜索引擎、什么时候查的。百度和 Google 的数字完全不可比。
+**Always state** which search engine and when you checked. Baidu and Google numbers are not comparable.
 
-**收录延迟是正常的**：新页面 3 到 7 天收录属于正常范围。发布第二天就断言"不被收录"是误判。
+**Indexing lag is normal.** New pages taking 3–7 days to index is within range. Concluding "not indexed" the day after publishing is a misdiagnosis.
 
-**超 7 天未收录**才需要排查，顺序见 `references/roles/seo.md`。
+**Over 7 days** is when you investigate — sequence in `references/roles/seo.md`.
 
-**收录率的分母**：拿不到站点真实页面数时，用 sitemap 条目数估算，必须在报告里注明"估算"。这个数字最容易被拿来虚报。
+**The denominator matters**: if you can't get the true page count, estimate from sitemap entries and **label it as an estimate**. This is the number most often inflated in reporting.
 
-## 三、关键词指标
+## 3. Keywords
 
-| 指标 | 定义 | 注意 |
+| Metric | Definition | Note |
 |---|---|---|
-| 展现量 | 页面在搜索结果中被展示的次数 | 第三方工具和官方后台差异很大，**只用官方数据** |
-| 点击量 | 从搜索结果点进来的次数 | —— |
-| 点击率（CTR） | 点击 / 展现 | 展现高但 CTR 低，问题在标题；CTR 高但展现低，问题在排名 |
-| 平均排名 | 多个关键词排名的均值 | 均值没意义，要看**核心词单独排名** |
-| 关键词覆盖数 | 有展现的关键词总个数 | 这个数比单个词排名更能反映内容量 |
+| Impressions | Times a page appeared in results | Third-party tools diverge wildly from official consoles — **use official data only** |
+| Clicks | Clicks from search results | — |
+| CTR | Clicks ÷ impressions | High impressions + low CTR = title problem. High CTR + low impressions = ranking problem |
+| Average position | Mean position across keywords | Meaningless — look at **head term positions individually** |
+| Keyword coverage | Total keywords with any impressions | More informative about content volume than any single ranking |
 
-**判断优先级**：核心词排名 > 关键词覆盖数 > 平均排名。
-平均排名是最没用的指标 —— 一个排第 1 的词和一排第 80 的词平均起来是 40，什么都说明不了。
+**Priority**: head term position > keyword coverage > average position.
+Average position is the least useful metric here — averaging a #1 and a #80 gives you 40, which tells you nothing.
 
-## 四、转化指标
+## 4. Conversion
 
-| 指标 | 定义 |
+| Metric | Definition |
 |---|---|
-| 询盘数 | 有效咨询数量（去重，去掉同行和骚扰） |
-| 询盘成本 | 投入 / 询盘数 |
-| 转订单率 | 成交数 / 询盘数 |
-| 客单价 | 成交金额 / 成交数 |
+| Inquiries | Valid inbound contacts (deduplicated, spam and competitors excluded) |
+| Cost per inquiry | Spend ÷ inquiries |
+| Inquiry-to-order rate | Orders ÷ inquiries |
+| Average order value | Revenue ÷ orders |
 
-**询盘要定"有效"的标准**，不然每周数字都对不上。写进业务档案：什么算有效询盘。
+**Define "valid"** or your weekly numbers will never reconcile. Write the definition into the business profile.
 
-## 五、采集方法
+## 5. Where to Collect
 
-| 数据 | 上哪拿 |
+| Data | Source |
 |---|---|
-| 收录数、展现、点击、排名 | 搜索引擎的站长/资源平台 |
-| 站点流量 | 自建统计工具 |
-| 各平台阅读、推荐 | 平台创作者后台 |
-| 询盘 | 客服记录 / 表单后台 |
-| 竞品数据 | 第三方工具 + 人工核查 |
+| Index count, impressions, clicks, positions | Search engine webmaster / resource consoles |
+| Site traffic | Your own analytics |
+| Per-platform reads and reach | Platform creator dashboards |
+| Inquiries | CRM or form backend |
+| Competitor data | Third-party tools + manual verification |
 
-**第三方工具的数字只用于横向比较，不能用于对外汇报。** 官方后台和第三方工具的展现量可能差几倍，混用会得出完全错误的结论。
+**Third-party numbers are for relative comparison only, never for external reporting.** Official consoles and third-party tools can differ by a factor of several on impressions — mixing them produces confidently wrong conclusions.
 
-## 六、口径一致性（最重要）
+## 6. Consistency (most important)
 
-1. **不中途换工具**。换了必须在报告里标注具体日期，否则曲线会出现无法解释的跳变。
-2. **不中途换算法**。比如收录率分母从"页面数"改成"sitemap 数"，等于换了指标，要重算历史。
-3. **不看单日定趋势**。任何指标都要拉 7 日均值再看，单日波动不构成判断。
-4. **周末和节假日单独看**。B 端生意周末流量天然低，把它当异常会反复误判。
-5. **同比优先于环比**。上周同期比上周，比"昨天比前天"更可靠。
+1. **Don't switch tools mid-stream.** If you do, note the exact date, or the trend line will show an unexplained jump.
+2. **Don't switch methodology.** Changing the index-rate denominator from page count to sitemap count is a different metric — recompute history.
+3. **Never judge a trend from one day.** Use a 7-day average first; single-day moves are noise.
+4. **Treat weekends and holidays separately.** B2B traffic drops naturally on weekends; calling it an anomaly leads to repeated false alarms.
+5. **Prefer period-over-period over day-over-day.** Last week vs. the week before beats yesterday vs. the day before.
 
-## 七、常见误判
+## 7. Common Misdiagnoses
 
-| 现象 | 别急着下结论 | 先查什么 |
+| Symptom | Don't conclude | Check first |
 |---|---|---|
-| 流量突然涨 | 内容爆了 | 是不是统计代码重复、是不是被爬虫刷了 |
-| 流量突然跌 | 被降权了 | 是不是周末、是不是统计工具故障 |
-| 收录掉了 | 内容被删 | 是不是站点改版导致 URL 变了 |
-| 展现高但没点击 | 标题不行 | 也可能排在第 2 页，看见但不点 |
-| 排名高但没流量 | 词选错了 | 也可能这个词本身搜索量极小 |
-| 询盘少了 | 流量不行 | 也可能客服响应慢、表单坏了 |
+| Traffic spiked | Content went viral | Duplicate tracking tag; bot traffic |
+| Traffic dropped | Penalised | Weekend; analytics outage |
+| Index count fell | Content deleted | Site redesign changed URLs |
+| High impressions, no clicks | Bad title | Also: ranking on page 2 — seen, not clicked |
+| High ranking, no traffic | Wrong keyword | Also: the term has almost no volume |
+| Inquiries fell | Traffic problem | Also: slow response, broken form |
 
-**默认假设应该是"我们弄错了"，而不是"平台针对我们"。** 这个顺序能省下大量无效排查。
+**Default assumption should be "we got something wrong", not "the platform is out to get us".** That ordering saves a lot of wasted investigation.

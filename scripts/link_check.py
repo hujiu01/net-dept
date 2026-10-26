@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""死链扫描：从 sitemap 提取 URL，并发检查状态码。
+"""Dead link scan: pull URLs from a sitemap and check status codes concurrently.
 
-只依赖 Python 标准库。支持 sitemapindex 递归一层。
+Standard library only. Handles sitemapindex one level deep.
 
-用法：
+Usage:
     python link_check.py --sitemap https://example.com/sitemap.xml
     python link_check.py --sitemap https://example.com/sitemap.xml --limit 200
     python link_check.py --urls urls.txt
 
-退出码：
-    0  无死链
-    1  存在死链
+Exit codes:
+    0  no dead links
+    1  dead links found
 """
 
 import argparse
@@ -22,7 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-UA = "net-dept-link-check/1.0 (+https://github.com)"
+UA = "net-dept-link-check/1.0 (+https://github.com/hujiu01/net-dept)"
 LOC_RE = re.compile(r"<loc>\s*(.+?)\s*</loc>", re.S)
 
 
@@ -61,7 +61,7 @@ def probe(url, timeout):
     except HTTPError as exc:
         return {"url": url, "code": exc.code, "ms": (time.perf_counter() - start) * 1000}
     except (socket.timeout, TimeoutError):
-        return {"url": url, "code": None, "err": "超时"}
+        return {"url": url, "code": None, "err": "timeout"}
     except URLError as exc:
         return {"url": url, "code": None, "err": str(exc.reason)}
     except Exception as exc:
@@ -69,10 +69,10 @@ def probe(url, timeout):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="死链扫描")
-    ap.add_argument("--sitemap", help="sitemap 地址")
-    ap.add_argument("--urls", help="URL 列表文件，每行一个")
-    ap.add_argument("--limit", type=int, default=500, help="最多检查多少个 URL")
+    ap = argparse.ArgumentParser(description="Dead link scan")
+    ap.add_argument("--sitemap", help="sitemap URL")
+    ap.add_argument("--urls", help="file of URLs, one per line")
+    ap.add_argument("--limit", type=int, default=500, help="max URLs to check")
     ap.add_argument("--timeout", type=int, default=10)
     ap.add_argument("--workers", type=int, default=8)
     args = ap.parse_args()
@@ -81,7 +81,7 @@ def main():
     if args.sitemap:
         urls, err = collect(args.sitemap, args.timeout)
         if err:
-            print(f"读取 sitemap 失败：{err}")
+            print(f"Failed to read sitemap: {err}")
             return 1
     if args.urls:
         with open(args.urls, "r", encoding="utf-8") as fh:
@@ -93,9 +93,9 @@ def main():
     urls = list(dict.fromkeys(urls))[: args.limit]
 
     if not urls:
-        ap.error("没有拿到任何 URL，检查 --sitemap 或 --urls")
+        ap.error("no URLs found — check --sitemap or --urls")
 
-    print(f"检查 {len(urls)} 个 URL …\n")
+    print(f"Checking {len(urls)} URL(s) …\n")
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         results = list(pool.map(lambda u: probe(u, args.timeout), urls))
 
@@ -103,16 +103,16 @@ def main():
     slow = [r for r in results if r["code"] and r["ms"] > 3000]
 
     if bad:
-        print(f"### 死链 {len(bad)} 个\n")
-        print("| URL | 状态码 | 错误 |")
+        print(f"### Dead links: {len(bad)}\n")
+        print("| URL | Status | Error |")
         print("|---|---|---|")
         for r in bad:
             print(f"| {r['url']} | {r['code'] or '-'} | {r.get('err', '')} |")
     else:
-        print("无死链。")
+        print("No dead links.")
 
     if slow:
-        print(f"\n### 响应偏慢 {len(slow)} 个（>3s）\n")
+        print(f"\n### Slow responses: {len(slow)} (>3s)\n")
         for r in slow:
             print(f"- {r['url']} → {r['ms']:.0f}ms")
 

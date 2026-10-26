@@ -1,188 +1,188 @@
-# 网络部 · net-dept
+# Net Dept · a marketing department in a skill
 
-一个把「线上获客团队」装进 AI 的 skill。一个负责人加五个执行岗位，各自有职责边界、工作方法、交付模板和检查清单，任何行业都能用。
+A whole online-acquisition department, packaged as a skill. One lead plus five specialist roles — each with its own boundaries, methods, delivery templates, and checklists. Works for any industry.
 
-装上之后，你不用再每次重新解释一遍流程。说「这个月该干什么」「分析下竞品」「写篇稿子发知乎」「客户说太贵了怎么回」，它会自动判断该派哪个角色、按什么标准交付。
+Once installed, you stop re-explaining your process every time. Say "what should we do this month", "analyse the competitors", "write something for Zhihu", or "the client says it's too expensive" — it routes to the right role and delivers to a fixed standard.
 
-## 为什么这样切
+## Why this shape
 
-执行层按获客链路切的，不是按职位表切的：
+The execution layer follows the acquisition chain, not a job-title chart:
 
 ```
-看外面          造内容          被找到          立信任          收成交
-竞品分析师  →  内容编辑师  →  SEO优化师  →  品牌运营师  →  客服转化
+See the market     Make content     Get found      Earn trust     Close
+Competitor    →    Editor      →    SEO       →    Brand     →    Conversion
 ```
 
-这条链断在哪一环，前端所有工作都会浪费：
+Break any link and everything upstream is wasted:
 
-| 断点 | 症状 |
+| Missing | What it looks like |
 |---|---|
-| 缺竞品 | 内容方向靠猜，做了半年不知道对手在干什么 |
-| 缺编辑 | 有策略没产出，选题会开了一堆 |
-| 缺 SEO | 写了很多没人看 |
-| 缺品牌 | 有流量没咨询，客户不信你 |
-| 缺客服 | 有咨询没成交，询盘躺在微信里 |
-| **缺负责人** | 五个岗都很忙，方向是散的，没人敢喊停 |
+| Competitor | Content direction is guesswork; six months in, nobody knows what rivals are doing |
+| Editor | Strategy with no output; endless topic meetings |
+| SEO | Lots of writing, nobody reads it |
+| Brand | Traffic but no inquiries; prospects don't trust you |
+| Conversion | Inquiries but no closes; leads rot in the inbox |
+| **Lead** | All five are busy, direction is scattered, nobody dares kill anything |
 
-最后一环最隐蔽。缺执行岗的症状是明显的 —— 没稿子、没流量、询盘没人接。缺负责人的症状是「大家都很努力，季度末没有进展」，很难归因到任何一个具体人身上。
+That last one is the hardest to spot. A missing execution role is obvious — no articles, no traffic, nobody answering. A missing lead looks like "we're all working hard and the quarter produced nothing", which is very hard to attribute to any one person.
 
-所以这五个执行岗之上还有一个决策层：
+So above the five execution roles sits a decision layer:
 
 ```
-                  网络部负责人
-            定一个主目标 · 停掉无效动作
-                        │
-    ┌────────┬──────────┼──────────┬────────┐
-   竞品      编辑       SEO        品牌      客服
+                     Department Lead
+              one target · kill dead initiatives
+                          │
+    ┌──────────┬──────────┼──────────┬──────────┐
+ Competitor  Editor      SEO      Brand    Conversion
 ```
 
-小团队一人兼多岗是常态，但职责边界要清楚。混在一起的典型结果是每件事都做了一点，没有一件做到能带来客户。
+Small teams wearing many hats is normal — but the boundaries still matter. Blending them typically produces a bit of everything and nothing that actually brings in customers.
 
-## 团队构成
+## The team
 
-| 角色 | 管什么 | 核心产出 |
+| Role | Owns | Core output |
 |---|---|---|
-| **网络部负责人** | 定方向、拆任务、定标准、看复盘、裁决冲突 | 主目标、五岗任务表、决策记录 |
-| **竞品收集分析师** | 外部对手情报 + 内部数据复盘 | 竞品对比表、情报简报 |
-| **内容编辑师** | 文案、图文、封面、视频脚本、平台发布 | 已发布的稿件与链接 |
-| **SEO优化师** | 传统搜索、AI 搜索（GEO）、多平台分发 | 关键词表、TDK、收录增长 |
-| **网站品牌运营师** | 官网、百科、口碑、服务器、自动化 | 站点健康度、品牌存量 |
-| **客服转化专员** | 咨询承接、报价、异议处理、回访 | 应答话术、报价单、回访记录 |
+| **Department Lead** | Direction, task breakdown, standards, reviews, tie-breaks | Target, role task table, decision log |
+| **Competitor Analyst** | External intelligence + internal data review + daily reporting | Comparison matrix, daily report, intel brief |
+| **Content Editor** | Copy, visuals, covers, video scripts, platform publishing | Published pieces and live URLs |
+| **SEO Specialist** | Search, AI search (GEO), distribution rules | Keyword map, meta, index growth |
+| **Brand & Site Operator** | Site, encyclopedia/PR presence, servers, automation | Site health, brand footprint |
+| **Customer Conversion** | Inquiry handling, quoting, objections, follow-up | Reply scripts, quotes, follow-up log |
 
-每个岗位卡片里包含：什么情况该派给它、干什么、不干什么、流程、输出格式、检查清单、常见坑。
+Each role card covers: when to dispatch it, what it does, what it explicitly does not do, its process, output format, checklist, and common failure modes.
 
-## 安装
+## Install
 
 ```bash
-git clone https://github.com/<your-name>/net-dept.git
+git clone https://github.com/hujiu01/net-dept.git
 cp -r net-dept ~/.workbuddy/skills/
 ```
 
-其他支持 skill 的客户端，把目录放进对应的 skills 路径即可。目录结构遵循通用的 `SKILL.md` + `references/` + `assets/` 约定。
+For other clients that support skills, drop the directory into the corresponding skills path. The layout follows the conventional `SKILL.md` + `references/` + `assets/` structure.
 
-## 首次使用
+## First run
 
-装好后第一次触发，它会先问你六个问题：
+On first trigger it asks six questions:
 
-1. 品牌名与公司主体名
-2. 主营产品或服务
-3. 核心获客关键词
-4. 报价口径
-5. 主要站点和内容渠道
-6. 行业合规红线
+1. Brand name and legal entity name
+2. What you sell
+3. Core acquisition keywords
+4. Pricing stance
+5. Primary sites and content channels
+6. Industry compliance red lines
 
-答案存进 `references/profile.local.md`（已被 gitignore），之后所有岗位都从这份档案取事实。
+Answers go into `references/profile.local.md` (gitignored). Every role reads facts from there.
 
-**也可以手动填。** 复制 `references/profile.md` 为 `references/profile.local.md`，按里面的字段填空即可。填得越细，产出越准。
+**Or fill it in by hand.** Copy `references/profile.md` to `references/profile.local.md` and fill in the fields. The more precise the profile, the better the output.
 
-## 使用示例
+## Examples
 
 ```
-这个月该干什么
-整理昨天的数据，出个日报
-复盘一下上周，哪些动作该停
-分析下竞品最近在做什么
-写一篇关于 <你的核心场景> 的稿子，发知乎
-我们的收录率一直上不去，怎么查
-官网改版要注意什么
-客户说太贵了，怎么回
+What should we do this month?
+Put together yesterday's data report
+Review last week — what should we stop doing?
+What are the competitors up to?
+Write a piece about <your core scenario> for Zhihu
+Our index rate is stuck. How do I diagnose it?
+What should we watch out for in a site redesign?
+The client says it's too expensive. How do I reply?
 ```
 
-## 自动化
+## Automation
 
-`scripts/` 里有三个零依赖脚本，只用 Python 标准库，不需要 pip install：
+`scripts/` has three zero-dependency scripts — Python standard library only, no `pip install`:
 
 ```bash
-# 站点体检：状态码、响应耗时、SSL 剩余天数、robots、sitemap
+# Site health: status code, response time, SSL days left, robots, sitemap
 python3 scripts/site_check.py --file sites.txt
 
-# 死链扫描：从 sitemap 提取 URL 逐个查，支持 sitemapindex
+# Dead link scan: pulls URLs from sitemap, handles sitemapindex
 python3 scripts/link_check.py --sitemap https://example.com/sitemap.xml
 
-# 定时任务心跳：解决 cron 静默失败
+# Cron heartbeat: solves silent failures
 python3 scripts/heartbeat.py beat --dir /var/hb --name daily-push
 python3 scripts/heartbeat.py check --dir /var/hb --max-age 26
 ```
 
-三个都支持退出码非 0，直接接 `||` 就能报警：
+All three exit non-zero on problems, so `||` wiring gives you alerting:
 
 ```bash
-0 * * * * cd /opt/net-dept && python3 scripts/site_check.py --file sites.txt >> /var/log/site.log 2>&1 || echo "站点异常" | mail -s "告警" you@example.com
+0 * * * * cd /opt/net-dept && python3 scripts/site_check.py --file sites.txt >> /var/log/site.log 2>&1 || echo "site down" | mail -s "alert" you@example.com
 ```
 
-`references/automation.md` 里有完整清单 —— 12 项可自动化的按投入产出排了序，也包括**哪些不该自动化**：选题判断、归因分析、改版决策、内容合规，这些交给机器的结果是看着有产出、实际没有。还有 crontab 示例和六个必踩的坑（时区、PATH、工作目录、并发、日志膨胀、依赖漂移）。
+`references/automation.md` ranks twelve automations by what breaks if you skip them, and includes a section on **what should not be automated** — topic selection, attribution, redesign decisions, compliance judgement. Handing those to a machine produces output that looks like work and isn't. Also there: cron examples and six traps (timezone, PATH, working directory, overlap, log growth, dependency drift).
 
-## 目录结构
+## Layout
 
 ```
 net-dept/
-├── SKILL.md                    角色路由 + 调度规则 + 部门底线
+├── SKILL.md                    role routing + operating rules + bottom line
 ├── README.md
 ├── LICENSE
 ├── .gitignore
 ├── references/
-│   ├── profile.md              业务档案模板（提交）
-│   ├── profile.local.md        你自己的业务档案（不提交）
-│   ├── workflow.md             5 条链路 + 每日循环
-│   ├── metrics.md              指标口径（同一个数怎么算）
-│   ├── automation.md           自动化清单 + 哪些不能自动
+│   ├── profile.md              business profile template (committed)
+│   ├── profile.local.md        your real profile (not committed)
+│   ├── workflow.md             5 chains + the daily loop
+│   ├── metrics.md              metric definitions (so the same number means the same thing)
+│   ├── automation.md           what to automate, what not to
 │   └── roles/
-│       ├── lead.md             负责人（决策层）
-│       ├── competitor.md       含每日数据整理
+│       ├── lead.md             decision layer
+│       ├── competitor.md       includes daily data reporting
 │       ├── editor.md
 │       ├── seo.md
 │       ├── brand.md
 │       └── service.md
 ├── assets/
-│   ├── competitor-matrix.md    竞品对比表
-│   ├── daily-report.md         每日数据日报
-│   ├── publish-checklist.md    发布验收清单
-│   └── weekly-report.md        周报模板
+│   ├── competitor-matrix.md    comparison matrix
+│   ├── daily-report.md         daily data report
+│   ├── publish-checklist.md    pre/post publish checks
+│   └── weekly-report.md        weekly report
 └── scripts/
-    ├── site_check.py           站点体检（状态码/耗时/SSL/sitemap）
-    ├── link_check.py           死链扫描
-    └── heartbeat.py            定时任务心跳
+    ├── site_check.py           status / latency / SSL / sitemap
+    ├── link_check.py           dead link scan
+    └── heartbeat.py            cron heartbeat
 ```
 
-## 设计取舍
+## Design notes
 
-**为什么只加载一个角色卡。** `SKILL.md` 只有 4KB，是张路由表。说「分析竞品」时只加载 `competitor.md`，另外五份不进上下文。六个角色全塞进主文件，每次触发都吃掉大量上下文，处理复杂任务时容易崩。
+**Why one role card at a time.** `SKILL.md` is a 4KB routing table. Say "analyse the competitors" and only `competitor.md` loads — the other five never enter context. Stuffing six roles into the main file burns a large amount of context on every trigger and degrades complex work.
 
-**为什么要有 `profile.md`。** 通用方法论必须和具体事实分开。方法论可以开源共享，公司名、报价、证书号不行。这份档案就是两者的接口。
+**Why `profile.md` exists.** General method and specific facts have to be separated. Method can be open-sourced; company names, pricing, certificate IDs cannot. The profile is the interface between them.
 
-**为什么负责人单独一层。** 执行岗天然只会说"我要更多资源"，不会说"这条线该停"。负责人的价值不在管人，在于只做两件执行岗做不了的事：定一个主目标、停掉无效动作。
+**Why the Lead is its own layer.** Execution roles will always say "give me more resources", never "kill this line". The Lead's value isn't managing people — it's doing the two things execution roles structurally cannot: pick one target, and stop dead work.
 
-**为什么指标口径要单独成文件。** 数据工作最容易出的问题不是采不到数，是同一个指标每次算得不一样。收录率的分母从"页面数"换成"sitemap 数"，曲线就断了，而且断的时候没人发现。口径定死，谁算都一样。
+**Why metric definitions get their own file.** The main failure mode in data work isn't failing to collect numbers — it's computing the same metric differently each time. Change the denominator of "index rate" from page count to sitemap count and the trend line breaks, usually without anyone noticing.
 
-**为什么写「常见坑」。** 通用 SEO 知识网上到处都是，真正稀缺的是「改完模板要先清缓存」「境外服务器 cron 默认 UTC 会差几小时」这种踩过的坑。角色卡的价值在细节，不在框架。
+**Why the cards include traps.** Generic SEO advice is everywhere. What's scarce is "clear the cache before verifying or you'll misjudge it as broken" or "cron on overseas servers defaults to UTC and your tasks fire hours off". The value is in the detail, not the framework.
 
-## 想拆得更细
+## Going finer-grained
 
-五个执行岗是骨架，可以往上加。常见拆法：
+The five execution roles are a skeleton. Common splits:
 
-- **视觉设计师** 从编辑岗拆出
-- **短视频编导** 从编辑岗拆出
-- **GEO 优化师** 从 SEO 岗拆出
-- **投放优化师**（付费流量）独立
-- **私域运营** 从客服岗拆出
-- **外链/口碑专员** 从品牌岗拆出
+- **Visual designer** out of Editor
+- **Short video producer** out of Editor
+- **GEO specialist** out of SEO
+- **Paid media buyer** as its own role
+- **Lifecycle / CRM** out of Conversion
+- **Link building / PR** out of Brand
 
-加的办法：在 `references/roles/` 新建卡片，然后在 `SKILL.md` 的路由表里加一行。记得描述要写清「什么情况派给它」，否则不会被触发。
+To add one: create a card in `references/roles/` and add a row to the routing table in `SKILL.md`. Write the description around "when to dispatch it" — otherwise it will never trigger.
 
-**负责人这一层不建议拆。** 拆成两个决策者，等于没有决策者。
+**Don't split the Lead layer.** Two decision-makers means no decision-maker.
 
-## 自定义
+## Customising
 
-改任何文件都不用担心破坏结构，只要保证：
+You can edit any file without breaking the structure, as long as:
 
-1. `SKILL.md` 的 frontmatter 有 `name` 和 `description`
-2. `description` 写清「做什么」和「什么场景用」，这是触发依据
-3. 路由表里的文件路径真实存在
+1. `SKILL.md` frontmatter has `name` and `description`
+2. `description` states what it does and when to use it — that's what drives triggering
+3. Every path in the routing table actually exists
 
 ## License
 
-MIT。随便用，商用也行，改了也不用说。能帮到你就算没白写。
+MIT. Use it, ship it commercially, change it without telling anyone.
 
 ---
 
-维护提示：`references/profile.local.md` 已在 `.gitignore` 里。提交前确认一下 `git status`，别把公司的报价单推上去了。
+Maintenance note: `references/profile.local.md` is in `.gitignore`. Check `git status` before committing — don't push your company's price list to a public repo.

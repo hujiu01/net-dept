@@ -1,60 +1,60 @@
-# 竞品对比表
+# Competitor Comparison Matrix
 
-> 使用方法：复制这份表填。没有出处的地方写"待核实"，不要留空，也不要猜。
+> How to use: copy this table and fill it in. Write "unverified" where you have no source — don't leave blank, don't guess.
 
-## 基础对比
+## Basic comparison
 
-| 项目 | 我方 | 对手 A | 对手 B | 对手 C |
+| Item | Us | Competitor A | Competitor B | Competitor C |
 |---|---|---|---|---|
-| 公司主体 | | | | |
-| 品牌名 | | | | |
-| 主营产品/服务 | | | | |
-| 主力型号/方案 | | | | |
-| 关键资质 | | | | |
-| 执行标准 | | | | |
-| 报价（标品） | | | | |
-| 报价（定制） | | | | |
-| 服务/安装费 | | | | |
-| 响应时效 | | | | |
-| 代表性客户 | | | | |
-| 覆盖区域 | | | | |
-| 供应链来源 | | | | |
+| Legal entity | | | | |
+| Brand name | | | | |
+| Core offering | | | | |
+| Lead product / model | | | | |
+| Key credentials | | | | |
+| Governing standard | | | | |
+| Price (standard) | | | | |
+| Price (custom) | | | | |
+| Service / install fee | | | | |
+| Response time | | | | |
+| Referenceable clients | | | | |
+| Coverage area | | | | |
+| Supply chain | | | | |
 
-## 线上表现
+## Online presence
 
-| 指标 | 我方 | 对手 A | 对手 B | 数据来源 | 采集日期 |
+| Metric | Us | Competitor A | Competitor B | Source | Date collected |
 |---|---|---|---|---|---|
-| 主站域名 | | | | | |
-| 搜索收录数 | | | | | |
-| 收录率 | | | | | |
-| 核心词排名 | | | | | |
-| 是否被 AI 搜索引用 | | | | | |
-| 内容更新频率 | | | | | |
-| 活跃平台 | | | | | |
-| 主推关键词 | | | | | |
+| Primary domain | | | | | |
+| Indexed pages | | | | | |
+| Index rate | | | | | |
+| Head term positions | | | | | |
+| Cited by AI search | | | | | |
+| Publishing cadence | | | | | |
+| Active platforms | | | | | |
+| Primary target terms | | | | | |
 
-> 收录率 = 已收录页面数 / 站点总页面数。对手的总页面数拿不到时，用 sitemap 条目数估算，并在来源列注明"估算"。
+> Index rate = indexed pages ÷ total pages. When the competitor's total page count isn't available, estimate from sitemap entries and mark the source column "estimated".
 
-## 结论
+## Conclusion
 
-**事实**（查到了什么，带来源和日期）
-
--
-
-**含义**（对我们意味着什么）
+**Facts** (what was found, with source and date)
 
 -
 
-**动作**（谁 / 什么时候 / 做什么）
+**Meaning** (what it implies for us)
 
-| 责任岗位 | 动作 | 完成时间 |
+-
+
+**Actions** (who / when / what)
+
+| Owning role | Action | Due |
 |---|---|---|
 | | | |
 
 ---
 
-### 填报提醒
+### Filing notes
 
-- 多个"对手"可能是同一主体的不同马甲（同一集团、共用供应链、换壳公司），发现后在备注里写明并合并统计
-- 对手官网的自我宣称（行业第一、市占率最高）只能算"对手宣称"，不能算事实
-- 价格类信息时效性极强，超过 3 个月要重新采
+- Several "competitors" may be the same entity under different names (same group, shared supply chain, renaming). Note it and merge them
+- Self-declared claims on a competitor's own site ("industry leader", "largest market share") count as claims, not facts
+- Pricing ages extremely fast — anything older than three months needs re-collection

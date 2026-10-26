@@ -1,91 +1,91 @@
-# 发布验收清单
+# Publish Checklist
 
-内容发出去之前、之后逐条走。**任何一条没过，不发。** 发出去改不了，或者改的成本比重写还高。
-
----
-
-## 一、发布前
-
-### 文字
-
-- [ ] 标题与正文一致，没有标题党
-- [ ] 首段自然覆盖了核心关键词，没硬塞
-- [ ] 无绝对化用语（100%、永不、唯一、最安全、第一）
-- [ ] 品牌名与主体名用法符合业务档案
-- [ ] 事实性描述可追溯，没有"据说""业内普遍认为"
-
-### 素材齐不齐
-
-缺一样就不要发 —— 发出去之后才发现少东西，往往只能删了重发。
-
-- [ ] 正文
-- [ ] 封面（尺寸符合平台要求，主体居中，大字清晰）
-- [ ] 摘要 / 导语
-- [ ] 标签 / 话题
-- [ ] 配图（全部到位，无版权风险）
-- [ ] 视频（如需）：9:16 竖版，前 3 秒有钩子
-
-### 平台红线
-
-按 `references/profile.local.md` 的红线段逐条对照：
-
-- [ ] 无电话号码
-- [ ] 无官网地址
-- [ ] 无完整公司名（平台要求时）
-- [ ] 无二维码 / 微信号
-- [ ] 无竞品平台名
-- [ ] 无目标平台的其他禁用词
-
-### 排期
-
-- [ ] 顺序按 SEO 岗给的规范（一般是先主站后平台）
-- [ ] 主打词已确认，不是全平台同一个词
-- [ ] 发布时间在读者活跃时段
-- [ ] 同一天不超过 2 个平台
-- [ ] 定时设置已确认，时区正确
+Run this before and after every publish. **If any line fails, don't publish.** Once it's out you usually can't fix it, or fixing costs more than rewriting.
 
 ---
 
-## 二、提交之后（当场验，别等明天）
+## 1. Before publishing
 
-后台显示"发布成功"不等于用户能看到。
+### Copy
 
-- [ ] 状态是「已发布」，不是「待审」「草稿」「仅自己可见」
-- [ ] 封面显示正常，没有被裁切或拉伸
-- [ ] 图片全部加载完成，没有裂图
-- [ ] 排版没错乱（表格、列表、引用块、代码块）
-- [ ] 标签 / 话题生效，能被搜到
-- [ ] 手机端打开看一遍，字号和间距正常
-- [ ] 复制链接到无痕窗口打开，确认无需登录即可查看
+- [ ] Headline matches the body — no clickbait
+- [ ] First paragraph covers the core keyword naturally, not bolted on
+- [ ] No absolute claims (100%, never fails, the only, the safest, number one)
+- [ ] Brand name and entity name used as the profile specifies
+- [ ] Every factual claim traceable — no "it's said that", no "the industry generally believes"
+
+### Assets complete
+
+Missing one means don't publish — discovering the gap afterwards usually means deleting and reposting.
+
+- [ ] Body copy
+- [ ] Cover (right dimensions for the platform, subject centred, large type legible)
+- [ ] Summary / lede
+- [ ] Tags / topics
+- [ ] Images (all present, no licensing risk)
+- [ ] Video if required: 9:16 vertical, hook in the first 3 seconds
+
+### Platform red lines
+
+Check against the red-line section of `references/profile.local.md`:
+
+- [ ] No phone numbers
+- [ ] No website URLs
+- [ ] No full company name (where the platform requires it)
+- [ ] No QR codes or messaging IDs
+- [ ] No competitor platform names
+- [ ] No other platform-specific prohibited terms
+
+### Scheduling
+
+- [ ] Order follows SEO's rules (usually owned site first, then platforms)
+- [ ] Target term confirmed — not the same term everywhere
+- [ ] Publish time within the audience's active window
+- [ ] No more than two platforms in one day
+- [ ] Scheduled time confirmed, timezone correct
 
 ---
 
-## 三、发布之后
+## 2. Right after submitting (verify now, don't wait until tomorrow)
 
-| 时点 | 要做的事 | 判断标准 |
+A backend saying "published successfully" is not the same as a user being able to see it.
+
+- [ ] Status is "published", not "pending review", "draft", or "only visible to me"
+- [ ] Cover displays correctly — not cropped or stretched
+- [ ] All images loaded, none broken
+- [ ] Layout intact (tables, lists, blockquotes, code blocks)
+- [ ] Tags / topics applied and searchable
+- [ ] Opened on mobile — font size and spacing normal
+- [ ] Opened the URL in an incognito window — visible without logging in
+
+---
+
+## 3. After publishing
+
+| When | Action | Pass condition |
 |---|---|---|
-| 当天 | 提交收录推送（主动推送 / IndexNow） | 提示成功或返回 200 |
-| 24 小时 | 记录首日数据（阅读、推荐、停留） | 存入记录表 |
-| 3 天 | 查是否被收录 | 搜完整标题能搜到 |
-| 7 天 | 看点击与停留 | 低于基线就分析原因，不要直接判死 |
-| 14 天 | 看排名变化 | 无起色 → 换标题或换角度，不要按原样再发一遍 |
+| Same day | Submit for indexing (active submission / IndexNow) | Success response or HTTP 200 |
+| 24h | Record first-day data (reads, reach, dwell) | Logged in the record table |
+| 3 days | Check indexing | Searching the full headline finds it |
+| 7 days | Check clicks and dwell | Below baseline means analyse — don't write it off yet |
+| 14 days | Check ranking movement | No movement → change the headline or angle, don't repost as-is |
 
-未收录的，走 SEO 岗的「收录异常排查顺序」，不要直接归因于内容差。
+If it isn't indexed, run SEO's index troubleshooting sequence. Don't conclude the content is bad.
 
 ---
 
-## 四、发布记录表
+## 4. Publish log
 
-每次发布填一行。三个月后这张表就是最可靠的经验来源。
+One row per publish. In three months this table is the most reliable source of experience you'll have.
 
-| 日期 | 平台 | 标题 | 链接 | 主打词 | 首日数据 | 3日收录 | 7日点击 | 备注 |
+| Date | Platform | Headline | URL | Target term | Day-1 data | Indexed (3d) | Clicks (7d) | Note |
 |---|---|---|---|---|---|---|---|---|
 | | | | | | | | | |
 
 ---
 
-## 最容易漏的三条
+## The three most commonly missed
 
-1. **无痕窗口验一遍** —— 自己登录状态看得到，不代表别人看得到
-2. **当天提交收录** —— 隔一周再提，时效差很多
-3. **记下主打词** —— 不记，三周后没人说得清这篇是为了拿哪个词
+1. **Verify in an incognito window** — seeing it while logged in doesn't mean others can
+2. **Submit for indexing the same day** — waiting a week costs real time
+3. **Record the target term** — skip it and three weeks later nobody can say what the piece was for

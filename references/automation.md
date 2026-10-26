@@ -1,140 +1,138 @@
-# 自动化清单
+# Automation Checklist
 
-自动化的作用只有一个：**把发现问题的成本降到接近零**。它不替你判断。
+Automation does exactly one thing: **it drives the cost of noticing a problem to near zero**. It does not make judgements for you.
 
-判断一条该不该自动化，只看一句：**同一个动作，重复做，判断标准固定** —— 该自动化。
-重复做但每次都要判断 —— 做成人机半自动：脚本出数据，人给结论。
+The test for whether something should be automated is one sentence: **same action, repeated, fixed criteria** — automate it.
+Repeated but requiring judgement each time — make it semi-automatic: the script produces data, a person draws the conclusion.
 
-## 一、可自动化清单（按投入产出排序）
+## 1. What to automate (ranked by return)
 
-### 必做：挂了会出事，且现在多半没做
+### Must-do: things that break quietly and probably aren't set up yet
 
-| 自动化 | 频率 | 不做会怎样 | 落地 |
+| Automation | Frequency | If you skip it | How |
 |---|---|---|---|
-| **站点可用性监控** | 每小时 | 站挂了几天没人知道，排名跟着掉 | `scripts/site_check.py` |
-| **定时任务心跳** | 每天 | cron 静默失败，两周后才发现没产出 | `scripts/heartbeat.py` |
-| **SSL 到期监控** | 每天 | 证书过期当天浏览器报红，客户直接走 | `site_check.py` 已含 |
-| **备份** | 每天 | 出事时没有回退点 | cron + 对象存储 |
-| **备份可恢复验证** | 每月 | 备份文件存在但恢复不了，等于没有 | 每季度真恢复一次到测试环境 |
+| **Uptime monitoring** | hourly | Site down for days, rankings follow | `scripts/site_check.py` |
+| **Cron heartbeat** | daily | Scheduled jobs fail silently; discovered weeks later when there's no output | `scripts/heartbeat.py` |
+| **SSL expiry monitoring** | daily | Browser warning on expiry day; visitors leave immediately | included in `site_check.py` |
+| **Backups** | daily | No rollback point when it matters | cron + object storage |
+| **Backup restore verification** | monthly | Backup files exist but won't restore — which means no backup | restore to staging quarterly |
 
-前三条用本目录的脚本就能覆盖，不需要任何第三方服务。
+The first three are covered by the scripts here. No third-party service needed.
 
-### 值得做：省时间，且让节奏稳定
+### Worth doing: saves time, stabilises cadence
 
-| 自动化 | 频率 | 收益 | 落地 |
+| Automation | Frequency | Why | How |
 |---|---|---|---|
-| **死链扫描** | 每周 | 掉排名的隐性原因，人工查不动 | `scripts/link_check.py` |
-| **日报骨架生成** | 每天 | 省 20 分钟填表时间 | 脚本抓数 + `assets/daily-report.md` |
-| **收录推送** | 每天或每次发布 | 收录提速，早几天进池子 | 站长平台 API |
-| **sitemap 自动更新提交** | 每次发布 | 新页面不漏 | CMS 插件或构建时生成 |
-| **内容定时发布** | 按排期 | 节奏稳定，不靠人记得 | 平台 API 或发布队列 |
-| **竞品页面监控** | 每天 | 对手调价、上新品第一时间知道 | 抓页面 + diff |
+| **Dead link scanning** | weekly | Silent ranking drag, impossible to check by hand | `scripts/link_check.py` |
+| **Daily report scaffolding** | daily | Saves 20 minutes of table filling | script + `assets/daily-report.md` |
+| **Index submission** | daily or per publish | Enters the queue days earlier | webmaster API |
+| **Sitemap regeneration and submission** | per publish | New pages don't get missed | CMS plugin or build step |
+| **Scheduled publishing** | per calendar | Stable cadence without relying on memory | platform API or queue |
+| **Competitor page monitoring** | daily | Catch price changes and new products immediately | fetch + diff |
 
-### 可选：有价值但依赖外部条件
+### Optional: valuable but conditional
 
-| 自动化 | 门槛 |
+| Automation | Prerequisite |
 |---|---|
-| 关键词排名批量监控 | 官方后台导出，或第三方 API（注意反爬与合规） |
-| 多语种站点 hreflang 校验 | 多语言站才需要 |
-| 图片压缩与格式转换 | 素材量大才值得 |
-| 内容去重检测 | 多站同源时需要 |
+| Bulk keyword rank tracking | Official export, or a paid API (watch rate limits and ToS) |
+| hreflang validation | Multi-language sites only |
+| Image compression and format conversion | Only worth it at volume |
+| Duplicate content detection | Only needed across multiple sites |
 
-## 二、不能自动化的（这份比上一份重要）
+## 2. What should not be automated (this section matters more)
 
-| 不能自动 | 为什么 |
+| Don't automate | Why |
 |---|---|
-| **选题判断** | 需要知道客户真实在问什么。机器能统计关键词，猜不出哪句话能让客户停下来 |
-| **归因分析** | "掉了 30%" 要结合季节性、对手动作、平台改规则、自己改了什么。脚本能发现异常，说不出原因 |
-| **改版决策** | 涉及取舍，取舍涉及资源分配，那是人的事 |
-| **客户话术** | 每个客户的场景、预算、决策链都不同 |
-| **内容合规判断** | 平台规则在变，同样一句话这个月能发下个月不行 |
-| **停掉某条线** | 沉没成本是心理问题，不是技术问题 |
+| **Topic selection** | Requires knowing what customers actually ask. A machine can count keywords; it can't tell which line makes someone stop scrolling |
+| **Attribution** | "Dropped 30%" depends on seasonality, competitor moves, platform rule changes, and your own changes. A script finds the anomaly; it can't explain it |
+| **Redesign decisions** | Involves trade-offs, and trade-offs involve allocating resources — that's a person's call |
+| **Customer scripts** | Every customer's context, budget, and decision chain differ |
+| **Compliance judgement** | Platform rules change; what was fine last month isn't this month |
+| **Killing a channel** | Sunk cost is a psychological problem, not a technical one |
 
-**为什么这份更重要**：一个只会报警不会判断的系统，用两周就会被无视。报警疲劳比没报警更危险 —— 因为你会开始相信自己有一层保护，其实那层保护早就被关掉了。
+**Why this section matters more**: a system that only alerts and never judges gets ignored within two weeks. Alert fatigue is more dangerous than no alerts — because you'll believe you have a safety net that was quietly switched off.
 
-## 三、三条实施原则
+## 3. Three implementation rules
 
-1. **每个自动化必须能报警**。只跑不报的脚本等于没有。报警方式可以最简单：退出码非 0 + 发一封邮件。
-2. **报警必须可执行**。收到"任务失败"要知道下一步看哪里。报警内容里带上日志路径和排查顺序。
-3. **阈值宁松不紧**。一开始就设严格阈值，误报一多，整条链路会被关掉。先松后紧。
+1. **Every automation must alert.** A script that runs without reporting is not there. The alert can be as simple as a non-zero exit plus an email.
+2. **Alerts must be actionable.** "Job failed" should tell you where to look next. Put the log path and the troubleshooting order in the alert body.
+3. **Set thresholds loose, not tight.** Start strict and the false positives will get the whole pipeline switched off. Loosen first, tighten later.
 
-## 四、落地示例
+## 4. Wiring it up
 
-### 站点列表
+### Site list
 
-`sites.txt`，每行一个，`#` 开头为注释：
+`sites.txt`, one URL per line, `#` for comments:
 
 ```
 https://example.com
 https://example.org
 ```
 
-### 站点体检
+### Site health
 
 ```bash
 python3 scripts/site_check.py --file sites.txt
 ```
 
-输出一张表：状态码、耗时、SSL 剩余天数、robots、sitemap。有异常时退出码为 1。
+Outputs one table: status code, latency, SSL days remaining, robots, sitemap. Exits 1 on problems.
 
-### 死链扫描
+### Dead links
 
 ```bash
 python3 scripts/link_check.py --sitemap https://example.com/sitemap.xml --limit 500
 ```
 
-从 sitemap 提取 URL（支持 sitemapindex 递归一层），并发查状态码，列死链和慢页面。
+Pulls URLs from the sitemap (recursing one level into sitemapindex), checks them concurrently, lists dead and slow pages.
 
-### 给定时任务加心跳
+### Heartbeats
 
-在每个定时任务的**成功结尾**加一行：
+At the **successful end** of every scheduled job, add one line:
 
 ```bash
-python3 scripts/heartbeat.py beat --dir /var/hb --name baidu-push
+python3 scripts/heartbeat.py beat --dir /var/hb --name daily-push
 ```
 
-然后单独一个任务每天检查：
+Then a single daily job checks them all:
 
 ```bash
 python3 scripts/heartbeat.py check --dir /var/hb --max-age 26
 ```
 
-超期会退出码 1 并列出是哪几个任务。对频率不同的任务单独设阈值：
+Overdue jobs exit 1 and are listed. For jobs on different cadences, set per-job thresholds:
 
 ```bash
-python3 scripts/heartbeat.py check --dir /var/hb --expect baidu-push=26 --expect backup=50
+python3 scripts/heartbeat.py check --dir /var/hb --expect daily-push=26 --expect backup=50
 ```
 
 ### crontab
 
 ```bash
-# 每小时站点体检
-0 * * * * cd /opt/net-dept && python3 scripts/site_check.py --file sites.txt >> /var/log/site-health.log 2>&1 || echo "站点异常，看 /var/log/site-health.log" | mail -s "站点告警" you@example.com
+# hourly site health
+0 * * * * cd /opt/net-dept && python3 scripts/site_check.py --file sites.txt >> /var/log/site-health.log 2>&1 || echo "site down, see /var/log/site-health.log" | mail -s "site alert" you@example.com
 
-# 每天 09:00 检查任务心跳
-0 9 * * * cd /opt/net-dept && python3 scripts/heartbeat.py check --dir /var/hb >> /var/log/hb.log 2>&1 || echo "任务超期，看 /var/log/hb.log" | mail -s "任务告警" you@example.com
+# daily 09:00 heartbeat check
+0 9 * * * cd /opt/net-dept && python3 scripts/heartbeat.py check --dir /var/hb >> /var/log/hb.log 2>&1 || echo "job overdue, see /var/log/hb.log" | mail -s "job alert" you@example.com
 
-# 每周一凌晨扫死链
+# weekly dead link scan, Monday 03:00
 0 3 * * 1 cd /opt/net-dept && python3 scripts/link_check.py --sitemap https://example.com/sitemap.xml >> /var/log/links.log 2>&1
 ```
 
-`||` 是关键：脚本退出码非 0 才触发后面那半句。没有 `||` 的 cron 只是"跑了"，不是"监控了"。
+The `||` is the whole point: the second half only fires when the script exits non-zero. A cron line without `||` means "it ran", not "it's monitored".
 
-## 五、几个必踩的坑
+## 5. Traps you will hit
 
-- **时区**：境外服务器 cron 默认 UTC，比本地差几个小时。要么在 crontab 顶部写 `TZ=Asia/Shanghai`，要么自己换算。日志统一打 UTC，看日志时不会算错。
-- **PATH**：cron 环境变量极简，`python3` 可能找不到。写绝对路径，或者脚本首行指定解释器路径。
-- **工作目录**：cron 不继承你的当前目录，`cd` 要写进命令里。
-- **并发**：任务耗时超过执行间隔会叠加。加锁文件，或者把间隔拉长。
-- **日志膨胀**：日志不轮转，半年后磁盘满，然后所有任务一起挂。用 logrotate。
-- **依赖漂移**：脚本依赖的 API 改版会造成静默失败 —— 所以心跳是必需的，它能发现"跑了但没效果"。
+- **Timezone**: overseas servers default to UTC. Either put `TZ=Asia/Shanghai` (or your zone) at the top of the crontab, or convert manually. Log everything in UTC so you don't miscalculate when reading logs.
+- **PATH**: cron's environment is minimal; `python3` may not resolve. Use absolute paths, or set the interpreter path in the shebang.
+- **Working directory**: cron doesn't inherit yours. Put the `cd` in the command.
+- **Overlap**: a job that runs longer than its interval stacks up. Use a lock file, or lengthen the interval.
+- **Log growth**: unrotated logs fill the disk in six months and then every job dies at once. Use logrotate.
+- **Dependency drift**: an upstream API change causes silent failure — which is exactly why the heartbeat is mandatory. It catches "ran but produced nothing".
 
-## 六、先做哪三个
+## 6. If you have nothing yet, start with these three
 
-如果现在一条都没有，按这个顺序：
+1. **Site health** (hourly) — covers uptime and SSL expiry in one script
+2. **Job heartbeat** (daily) — covers silent failure across every existing cron
+3. **Index submission** (daily) — directly improves indexing speed
 
-1. **站点体检**（每小时）—— 覆盖可用性 + SSL 到期，一个脚本管两件事
-2. **任务心跳**（每天）—— 覆盖所有已有 cron 的静默失败
-3. **收录推送**（每天）—— 直接提升收录速度
-
-三个都做完，日常的"突然发现出事了"会减少绝大部分。剩下的收益递减，按需要再加。
+With those three in place, most "we found out too late" incidents go away. Returns diminish after that; add more as needed.

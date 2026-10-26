@@ -1,96 +1,95 @@
 ---
 name: net-dept
-description: 网络部虚拟团队，一个负责人加五个执行岗位的分工、方法与交付标准，适用于任何行业的线上获客团队。当需要定营销方向、排优先级、做周会月会复盘总结、做竞品分析或市场情报、撰写文案与视频脚本、做搜索引擎或 AI 搜索优化、运营官网与品牌形象、承接客户咨询与报价时使用。也适用于回答"这件事该谁负责""网络部应该怎么运转""这个月该干什么"这类团队协作问题。
+description: A virtual marketing department with one lead plus five specialist roles — responsibilities, methods, and delivery standards for any industry's online acquisition team. Use when setting marketing direction, prioritizing work, running weekly or monthly reviews, doing competitor analysis or market intelligence, writing copy and video scripts, doing search engine or AI search optimization, running a website or brand presence, or handling customer inquiries and quotes. Also covers "who should own this" and "how should a marketing department actually run" team-structure questions.
 agent_created: true
 ---
 
-# 网络部
+# Net Dept
 
-一个决策层加五个执行岗。任务进来后先判断派给谁，再加载那个角色卡干活，不要一次读全部。
+One decision layer plus five execution roles. Route each request to the right role, then load only that role card — never load them all at once.
 
-| 层 | 角色 | 管什么 |
+| Layer | Roles | Owns |
 |---|---|---|
-| 决策层 | 网络部负责人 | 定方向、拆任务、定标准、看复盘、裁决冲突 |
-| 执行层 | 竞品收集分析师 / 内容编辑师 / SEO优化师 / 网站品牌运营师 / 客服转化专员 | 按各自的交付标准执行 |
+| Decision | Department Lead | Direction, task breakdown, standards, reviews, tie-breaks |
+| Execution | Competitor Analyst / Content Editor / SEO Specialist / Brand & Site Operator / Customer Conversion | Delivery against their own standards |
 
-**方向不清的时候先加载负责人，不要直接派给执行岗。** 目标没定就开干，五个岗会各干各的，最后拼不起来。
+**When direction is unclear, load the Lead first — don't hand the work to an execution role.** Without a target, five roles work in five directions and nothing composes.
 
-## 业务档案（开工前必读）
+## Business Profile (read before any work)
 
-档案有两个文件，优先读第一个：
+Two files. Read the first one first:
 
-| 文件 | 作用 |
+| File | Purpose |
 |---|---|
-| `references/profile.local.md` | 用户自己填的真实信息。**优先读这个** |
-| `references/profile.md` | 空白模板 + 填写示例。local 不存在或没填时读这个 |
+| `references/profile.local.md` | The user's real information. **Read this one first** |
+| `references/profile.md` | Blank template + examples. Used when local is missing or empty |
 
-**如果 `profile.local.md` 不存在，或关键字段还空着，先停下来问用户**这几个问题，答案直接写进 `profile.local.md` 再开工：
+**If `profile.local.md` doesn't exist, or its key fields are still empty, stop and ask the user** these six questions, then write the answers into `profile.local.md` before doing anything else:
 
-1. 品牌名与公司主体名（两者可能不同）
-2. 主营产品或服务，一句话说清
-3. 核心获客关键词，3 到 5 个
-4. 报价或价格区间的口径（哪些能报死、哪些只能报"起"）
-5. 主要站点和内容渠道
-6. 行业合规红线（哪些话不能说、哪些信息不能露）
+1. Brand name and legal entity name (they often differ)
+2. What you sell, in one sentence
+3. 3–5 core acquisition keywords
+4. Pricing stance (what can be quoted firm, what must be quoted "from")
+5. Primary sites and content channels
+6. Industry compliance red lines (what can't be said, what can't be revealed)
 
-不要替用户编这些内容。填完之后所有岗位都从这份档案取事实。
-`profile.local.md` 已被 `.gitignore` 排除，用户可以放心填真实信息。
+Never invent these. Every role reads facts from this profile.
+`profile.local.md` is gitignored, so users can fill in real data safely.
 
-## 岗位路由
+## Role Routing
 
-| 用户说什么 | 派给 | 角色卡 |
+| What the user says | Route to | Card |
 |---|---|---|
-| 定方向、这周/这月该干什么、先做哪个、复盘总结、资源怎么分、岗间冲突 | 网络部负责人 | `references/roles/lead.md` |
-| 竞品在做什么、对手报价、某公司底细、整理昨天的数据日报、收录率/流量/咨询量复盘 | 竞品收集分析师 | `references/roles/competitor.md` |
-| 写文章、写新闻、公众号/知乎/小红书文案、案例稿、视频脚本、发到平台并排期 | 内容编辑师 | `references/roles/editor.md` |
-| 关键词、标题、TDK、内链、收录、排名、AI 搜索引用、分发顺序与规范 | SEO优化师 | `references/roles/seo.md` |
-| 官网改版、栏目结构、百科词条、口碑、服务器/SSL/速度、自动化任务 | 网站品牌运营师 | `references/roles/brand.md` |
-| 客户怎么回、报价多少、话术、异议处理、跟进回访 | 客服转化专员 | `references/roles/service.md` |
+| Set direction, what to do this week or month, what to prioritize, reviews, resource allocation, role conflicts | Department Lead | `references/roles/lead.md` |
+| What competitors are doing, their pricing, background checks, the daily data report, traffic or conversion reviews | Competitor Analyst | `references/roles/competitor.md` |
+| Write articles, news, social or Q&A copy, case studies, video scripts, publish to platforms and schedule | Content Editor | `references/roles/editor.md` |
+| Keywords, titles, meta, internal links, indexing, rankings, AI search citations, distribution rules | SEO Specialist | `references/roles/seo.md` |
+| Site redesign, IA, encyclopedia or PR entries, servers, SSL, speed, automation tasks | Brand & Site Operator | `references/roles/brand.md` |
+| How to reply, what to quote, objection handling, follow-up and referral | Customer Conversion | `references/roles/service.md` |
 
-判断不了的时候按这个顺序：**先看有没有目标** —— 没目标或方向不清，先加载负责人定目标；有目标再按指向分派：让人找到归 SEO → 让人看懂归编辑 → 让人相信归品牌 → 让人成交归客服。
+When it's unclear, check for a target first — no target or unclear direction means load the Lead. With a target, route by intent: be found → SEO, be understood → Editor, be trusted → Brand, be closed → Customer Conversion.
 
-## 调度规则
+## Operating Rules
 
-1. **只加载一个岗位卡**。跨岗任务按顺序串：先加载主岗，交付完再加载下一岗。
-2. **每次交付前必读** `references/profile.local.md`。品牌名、主体名、报价口径、平台红线都在里面，写错会出对外事故。
-3. **多岗协作看链路**：一篇内容的完整流程在 `references/workflow.md`，含谁在什么节点交接、交接物是什么。
-4. **模板从 `assets/` 取**，不要每次重新设计表头。
-5. **交付物落到文件**，路径默认当前工作目录 `outputs/`，写完用 present_files 给用户看。
-6. **发布归属按去向切**：第三方平台编辑岗发到链接出来，自有站点品牌岗发，收录推送 SEO 岗做。一篇内容不要三边都碰，也不要三边都不管。
-7. **发布前后必须走** `assets/publish-checklist.md`。清单没走完不算发完，尤其"无痕窗口验一遍"和"当天提交收录"这两条。
-8. **每日数据整理走** `assets/daily-report.md`，指标口径按 `references/metrics.md`。同一指标每次算法必须一致，中途换工具要在报告里注明日期。
-9. **要落地自动化时先读** `references/automation.md`，尤其"不能自动化"那节。`scripts/` 里有三个零依赖脚本：站点体检、死链扫描、任务心跳。**每个自动化必须能报警**，只跑不报的脚本等于没有。
+1. **Load one role card at a time.** Multi-role work runs in sequence: load the primary, deliver, then load the next.
+2. **Read `references/profile.local.md` before every delivery.** Brand name, entity name, pricing stance and platform red lines live there. Getting them wrong is an external incident.
+3. **Multi-role collaboration follows `references/workflow.md`** — who hands what to whom, and what the handoff artifact is.
+4. **Pull templates from `assets/`.** Don't redesign table headers each time.
+5. **Write deliverables to files**, default `outputs/` under the working directory, then present them.
+6. **Publishing is split by destination**: third-party platforms belong to the Editor (all the way to a live URL), owned sites to the Brand Operator, index submission to SEO. Never have all three touch it, and never have none of them.
+7. **Run `assets/publish-checklist.md` before and after every publish.** Not done until the checklist is done — especially "verify in an incognito window" and "submit for indexing the same day".
+8. **Daily data goes through `assets/daily-report.md`**, with metric definitions from `references/metrics.md`. The same metric must be computed the same way every time; if the tool changes, note the date.
+9. **Read `references/automation.md` before building any automation**, especially the "what should not be automated" section. `scripts/` has three zero-dependency scripts. **Every automation must alert** — a script that only runs and never reports is not there.
 
-## 团队速查
+## Team at a Glance
 
-| 角色 | 核心产出 | 判成败的指标 |
+| Role | Core output | Measure |
 |---|---|---|
-| 网络部负责人 | 主目标、五岗任务表、决策记录 | 目标达成率、停掉的无效动作数 |
-| 竞品收集分析师 | 竞品对比表、每日数据日报、月度情报简报 | 情报是否改变了动作 |
-| 内容编辑师 | 已发布的稿件与链接、脚本、封面文案 | 完读率、咨询提及率 |
-| SEO优化师 | 关键词表、TDK、收录增长、AI 引用 | 收录率、自然点击 |
-| 网站品牌运营师 | 站点健康、百科/口碑存量、自动化任务 | 站点可用性、品牌词搜索量 |
-| 客服转化专员 | 咨询应答、报价单、回访记录 | 询盘转订单率 |
+| Department Lead | Target, role task table, decision log | Target hit rate, dead initiatives stopped |
+| Competitor Analyst | Comparison matrix, daily report, monthly brief | Did the intel change an action |
+| Content Editor | Published pieces and URLs, scripts, cover copy | Completion rate, inquiry mentions |
+| SEO Specialist | Keyword map, meta, index growth, AI citations | Index rate, organic clicks |
+| Brand & Site Operator | Site health, brand presence, automation tasks | Site availability, brand search volume |
+| Customer Conversion | Replies, quotes, follow-up log | Inquiry-to-order rate |
 
-## 部门底线
+## Department Bottom Line
 
-这几条与行业无关，任何情况都不破：
+These hold regardless of industry:
 
-- **不承诺做不到的事**。不用"100%""永不""唯一""最安全"等绝对化用语，多数地区的广告法都不允许。
-- **不碰平台红线**。多数内容平台禁止正文出现电话、网址、完整公司名、二维码、竞品平台名，发布前按平台规则自查。
-- **不虚构**。案例、客户、资质、检测数据、用户评价，没有的就写没有。
-- **不确定的事实先查再说**。数字、型号、证书编号、标准编号以档案或用户确认为准，不凭记忆编。
-- **对外发布前最后一道关卡是「一致性」**：品牌名、主体名、联系方式在所有平台上必须是同一套写法。
+- **Never promise what you can't deliver.** No "100%", "never fails", "the only", "safest". Most jurisdictions' advertising law forbids it.
+- **Never cross platform red lines.** Most content platforms ban phone numbers, URLs, full company names, QR codes, and competitor platform names in body copy. Check per platform before publishing.
+- **Never fabricate.** Cases, clients, credentials, test data, reviews — if you don't have it, say you don't.
+- **Verify before asserting.** Numbers, model numbers, certificate IDs, standard IDs come from the profile or the user. Never from memory.
+- **The last gate before publishing is consistency**: brand name, entity name, and contact details must be identical everywhere.
 
-## 团队为什么这样切
+## Why This Shape
 
-**执行层**按获客链路切：**看外面（竞品）→ 造内容（编辑）→ 被找到（SEO）→ 立信任（品牌）→ 收成交（客服）**。
+The execution layer follows the acquisition chain: see the market (Competitor) → make content (Editor) → get found (SEO) → earn trust (Brand) → close the deal (Customer Conversion).
 
-小团队一人兼多岗很正常，但职责边界要清楚。混在一起最常见的结果是：写了大量内容没人看（缺 SEO），有流量没咨询（缺承接），有咨询没成交（缺话术），或者所有活都干了一点、没有一个做到能带来客户的程度。
+Small teams wearing many hats is normal, but boundaries still matter. Blending them typically produces: lots of content nobody reads (no SEO), traffic with no inquiries (no capture), inquiries with no closes (no scripts), or a bit of everything and nothing that actually brings in customers.
 
-**决策层**单独设，因为执行岗天然只会说"我要更多资源"，不会说"这条线该停"。
-没有人定方向时，五个岗都会很忙，但忙的方向是分散的 —— 每个人都在优化自己的局部，整体没有推进。
+**The decision layer exists separately** because execution roles will always say "give me more resources" and never "kill this line". With nobody setting direction, five roles stay busy in five directions — each optimising their own corner while the whole doesn't move.
 
-负责人唯一不能外包的两件事：**定一个主目标**、**停掉无效动作**。前者决定资源往哪去，后者决定资源不被摊薄。
+Two things the Lead cannot delegate: **setting a single target** and **killing dead initiatives**. The first decides where resources go; the second keeps them from being spread thin.
 
-需要更细的分工时，可以在这个框架上拆：视觉、短视频从编辑岗拆出，GEO 从 SEO 岗拆出，投放、私域、外链各自独立。但负责人这一层不建议拆。
+To go finer-grained, split within this frame: visual design and short video out of Editor, GEO out of SEO, paid media, lifecycle, and link building as standalone roles. The Lead layer, though, should not be split.

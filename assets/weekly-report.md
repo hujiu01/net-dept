@@ -1,62 +1,62 @@
-# 网络部周报
+# Weekly Report
 
-> 周期：____ 年 __ 月 __ 日 — __ 月 __ 日
-> 填写人：__________
+> Period: ____ / ____ / ______ — ____ / ____
+> Prepared by: __________
 
-## 一、核心数据
+## 1. Headline numbers
 
-| 指标 | 本周 | 上周 | 变化 | 说明 |
+| Metric | This week | Last week | Change | Note |
 |---|---|---|---|---|
-| 主站收录数 | | | | |
-| 主站收录率 | | | | |
-| 自然搜索点击 | | | | |
-| 询盘数 | | | | |
-| 成单数 | | | | |
-| 成交金额 | | | | |
+| Primary site indexed pages | | | | |
+| Primary site index rate | | | | |
+| Organic clicks | | | | |
+| Inquiries | | | | |
+| Orders | | | | |
+| Revenue | | | | |
 
-> 口径写清楚：收录数是哪个搜索引擎、点击是否含付费、询盘是否去重。口径变了要在下面注明，否则环比没有意义。
+> State the definitions: which search engine, whether clicks include paid, whether inquiries are deduplicated. If the definition changed, note it — otherwise the week-over-week comparison means nothing.
 
-## 二、本周产出
+## 2. Output this week
 
-| 类型 | 数量 | 主要选题 |
+| Type | Count | Main topics |
 |---|---|---|
-| 长文 / 新闻稿 | | |
-| 公众号 | | |
-| 知乎 | | |
-| 小红书 | | |
-| 短视频 | | |
-| 文档平台 | | |
+| Long-form / news | | |
+| WeChat articles | | |
+| Zhihu answers | | |
+| Xiaohongshu posts | | |
+| Short video | | |
+| Document platforms | | |
 
-## 三、有效与无效
+## 3. What worked, what didn't
 
-**带来咨询的内容**（附链接和咨询原话）
-
--
-
-**零效果的内容**（分析原因：选题、标题、平台还是时间）
+**Content that produced inquiries** (with URL and the customer's actual words)
 
 -
 
-> 这一节比数据表更重要。数据只说明结果，这一节说明原因。
+**Content that produced nothing** (diagnose: topic, headline, platform, or timing)
 
-## 四、情报要点
+-
 
-| 对手 | 动作 | 影响判断 |
+> This section matters more than the numbers table. Numbers show the result; this shows the reason.
+
+## 4. Intelligence highlights
+
+| Competitor | Move | Implication |
 |---|---|---|
 | | | |
 
-## 五、下周计划
+## 5. Next week
 
-| 岗位 | 任务 | 交付物 | 截止 |
+| Role | Task | Deliverable | Due |
 |---|---|---|---|
-| 竞品收集分析师 | | | |
-| 内容编辑师 | | | |
-| SEO优化师 | | | |
-| 网站品牌运营师 | | | |
-| 客服转化专员 | | | |
+| Competitor Analyst | | | |
+| Content Editor | | | |
+| SEO Specialist | | | |
+| Brand & Site Operator | | | |
+| Customer Conversion | | | |
 
-## 六、风险与卡点
+## 6. Risks and blockers
 
 -
 
-> 写真实卡点。"素材不够""预算未批""等决策"都算，藏着不说下周还在原地。
+> Write the real ones. "Not enough assets", "budget unapproved", "waiting on a decision" all count. Hide them and next week repeats.

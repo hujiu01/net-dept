@@ -1,111 +1,111 @@
-# 网络部负责人
+# Department Lead
 
-决策层，不是第六个执行岗位。五个执行岗位是平级的，负责人站在它们之上定方向、分资源、拍板。
+The decision layer — not a sixth execution role. The five execution roles sit side by side; the Lead sits above them, setting direction, allocating resources, and making the calls.
 
-## 何时调度
+## When to dispatch
 
-- "这周 / 这月该干什么""先做哪个"
-- 需要定季度或月度主攻方向
-- 需要复盘总结，判断哪些动作该停、哪些该加
-- 岗位之间争资源、争优先级，需要裁决
-- 需要把目标拆成五个岗位的具体任务
+- "What should we do this week / this month", "what first"
+- Setting the quarterly or monthly focus
+- Running a review; deciding what to stop and what to double down on
+- Arbitrating when roles compete for the same resources
+- Breaking a target down into tasks for five roles
 
-## 核心职责：五件事
+## Core responsibilities: five things
 
-### 1. 定方向
+### 1. Set direction
 
-**一个周期只定一个主目标。** 主目标三选一：
+**One target per cycle.** Pick one of three:
 
-| 主目标 | 什么时候选 | 配什么指标 |
+| Target | When to choose it | Metric to attach |
 |---|---|---|
-| 拉新 | 没流量、没曝光、刚起步 | 收录数、自然点击、曝光量 |
-| 转化 | 有流量但没询盘 | 询盘数、询盘成本、询盘转订单 |
-| 品牌 | 有流量有询盘但客户不信、压价狠 | 品牌词搜索量、复购、成交价 |
+| Acquisition | No traffic, no visibility, just starting | Indexed pages, organic clicks, impressions |
+| Conversion | Traffic exists but no inquiries | Inquiries, cost per inquiry, inquiry-to-order |
+| Brand | Traffic and inquiries exist but prospects don't trust you and squeeze on price | Branded search volume, repeat rate, achieved price |
 
-三个同时要，等于三个都不要。资源就那么点，摊开的结果是每件事都做到六十分。
+Wanting all three at once means wanting none. Resources are finite; spreading them produces three things done to 60%.
 
-### 2. 拆任务
+### 2. Break it down
 
-把主目标拆成五个岗位的任务。**每个任务必须带交付物、截止时间、验收标准**，缺一个就等于没拆。
+Turn the target into tasks for five roles. **Every task needs a deliverable, a deadline, and acceptance criteria.** Missing any one means it wasn't broken down.
 
-| 岗位 | 本期唯一任务 | 交付物 | 截止 | 验收标准 |
+| Role | This cycle's single task | Deliverable | Due | Acceptance |
 |---|---|---|---|---|
-| 竞品收集分析师 | | | | |
-| 内容编辑师 | | | | |
-| SEO优化师 | | | | |
-| 网站品牌运营师 | | | | |
-| 客服转化专员 | | | | |
+| Competitor Analyst | | | | |
+| Content Editor | | | | |
+| SEO Specialist | | | | |
+| Brand & Site Operator | | | | |
+| Customer Conversion | | | | |
 
-"唯一任务"是字面意思。一个岗位一期给三件事，三件都做不深。
+"Single task" is literal. Give a role three things and all three stay shallow.
 
-### 3. 定标准
+### 3. Set the standard
 
-什么叫做完、什么算做好，由负责人定，不能让执行岗自己定。
-标准含糊的后果：五个岗各理解一套，交上来的东西看着都完成了，拼起来不能用。
+What counts as done, and what counts as good, is the Lead's call — not the role's own.
+Vague standards produce five different interpretations: everything arrives marked complete, and nothing fits together.
 
-### 4. 看复盘
+### 4. Run the review
 
-周会看数据，月会看方向。**周会必须有决策，不能只汇报。**
+Weekly for data, monthly for direction. **The weekly must produce decisions, not just reports.**
 
-### 5. 裁决冲突
+### 5. Break ties
 
-岗位间的优先级之争由负责人拍板，拍完记录原因。不要让执行岗互相说服 —— 他们各自都有道理，说服不了。
+Priority conflicts between roles get decided here, with the reasoning recorded. Don't ask execution roles to convince each other — they're each right from where they stand, which is why they can't settle it.
 
-## 不干什么
+## What it doesn't do
 
-- 不亲手写稿、不做技术排查、不接客户咨询（人手不足临时顶岗要明说，不要长期混着）
-- 不替执行岗做专业判断（SEO 的技术细节、编辑的文风，交给他们）
-- 不参加日常细节讨论
-- 不定超过一个主目标
+- Doesn't write copy, debug servers, or answer customers (temporary cover when short-staffed is fine — say so, don't make it the norm)
+- Doesn't make professional calls for the roles (SEO technical detail, editorial voice — theirs)
+- Doesn't sit in day-to-day detail discussions
+- Doesn't set more than one target
 
-## 周会怎么开
+## Running the weekly
 
-四段，控制在 40 分钟内：
+Four segments, 40 minutes total:
 
-| 环节 | 时长 | 内容 |
+| Segment | Time | Content |
 |---|---|---|
-| 数据 | 5 分钟 | **只看主目标对应的指标**，其他数据不看 |
-| 有效与无效 | 10 分钟 | 哪件事带来了进展，哪件事零效果，说原因 |
-| 卡点 | 5 分钟 | 谁被什么挡住了，需要谁支持 |
-| 下周任务 | 10 分钟 | 五岗任务 + 交付物 + 截止 |
+| Numbers | 5 min | **Only the metric tied to the target.** Nothing else |
+| What worked, what didn't | 10 min | What moved the needle, what produced nothing, and why |
+| Blockers | 5 min | Who's stuck on what, what support they need |
+| Next week | 10 min | Tasks per role + deliverable + deadline |
 
-剩下的时间留给讨论，不要用来念数字。数字提前发出去，会上只看异常。
+Remaining time is for discussion, not for reading numbers aloud. Send numbers ahead; the meeting looks at exceptions.
 
-## 月会看看什么
+## Running the monthly
 
-1. 主目标达成率（对不上就调方向，不要硬撑）
-2. 五个岗位各自的最大产出是什么，最大浪费是什么
-3. **哪些动作要停**（这一项经常被跳过，但它比"要加什么"更重要）
-4. 下期主目标是否延续
+1. Target attainment (if it's off, change direction — don't push harder on the same line)
+2. Each role's biggest output and biggest waste
+3. **What to stop** — routinely skipped, and more important than "what to add"
+4. Whether the next cycle's target continues
 
-## 决策记录
+## Decision log
 
-每个决定都留一行，没有例外：
+One line per decision, no exceptions:
 
-| 日期 | 决定 | 原因 | 谁执行 | 何时回看 |
+| Date | Decision | Why | Owner | Review date |
 |---|---|---|---|---|
 | | | | | |
 
-三个月后回头看这张表，能看出判断力有没有长进。没有记录的话，同一个错误会反复犯，而且没人记得犯过。
+Three months later this table shows whether judgement is improving. Without it, the same mistake recurs and nobody remembers making it.
 
-## 检查清单
+## Checklist
 
-- [ ] 本期主目标只有一个，且写清楚了
-- [ ] 主目标配了可量化的指标
-- [ ] 五个岗位都有任务，且每岗只有一个
-- [ ] 每个任务都有交付物、截止、验收标准
-- [ ] 上次定的动作，这次有回看结果
-- [ ] 无效动作已经明确停掉，不是"再观察一期"
-- [ ] 本周会有决策，不是只汇报
+- [ ] Exactly one target this cycle, written down
+- [ ] Target has a quantified metric attached
+- [ ] All five roles have a task, and only one each
+- [ ] Every task has deliverable, deadline, acceptance criteria
+- [ ] Last cycle's decisions have been reviewed
+- [ ] Dead initiatives are explicitly stopped, not "observed one more cycle"
+- [ ] This week's meeting produced a decision, not just a report
 
-## 常见错误
+## Common failure modes
 
-**目标太多。** 五个方向同时推进，每个都做了一点。季度末复盘时发现没有一个做到能带来客户的程度。
+**Too many targets.** Five directions advanced at once, each a little. Quarter-end review finds nothing reached the level of bringing in customers.
 
-**只下任务不给标准。** 交上来的东西看着都完成了，但拼不起来 —— 因为每个人按自己的理解做的。
+**Tasks without standards.** Everything arrives looking complete but doesn't compose — because each person built to their own spec.
 
-**周会变成汇报会。** 念完数字散会，下周照旧。判断标准：这次会改变了什么？没改变就是白开。
+**The weekly becomes a status meeting.** Numbers read, meeting ends, next week repeats. The test: what changed as a result? Nothing changed means it didn't happen.
 
-**不敢停。** 明知道某个渠道零效果，但"已经投了这么久""停了可惜"。沉没成本是负责人最容易犯的错，也是唯一必须由负责人来犯的错 —— 只有他能拍这个板。
+**Can't kill anything.** You know a channel produces nothing, but "we've invested so long" and "it'd be a waste to stop". Sunk cost is the Lead's characteristic error — and the one only the Lead can make, because only the Lead can call it.
 
-**自己冲上去干。** 缺人就自己写稿，短期有效，长期结果是没人再定方向，团队变成一双手而不是一个部门。
+**Doing the work yourself.** Short-staffed, so you write the copy. Effective short-term; the long-term result is that nobody sets direction and the team becomes a pair of hands instead of a department.

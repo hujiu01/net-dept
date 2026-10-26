@@ -1,89 +1,74 @@
-# 岗位协作链路
+# Collaboration Chains
 
-多个岗位接力时按下面的顺序走。每一环都有明确的交接物，交接物没给到位就退回上一环，不要带着缺损往下做。
+When roles hand off to each other, follow these orders. Every link has a required handoff artifact — if it's missing, bounce it back. Don't carry a gap downstream.
 
-## 链路零：定方向（每个周期开头，先走这条）
+## Chain 0: Set direction (start of every cycle)
 
 ```
-网络部负责人 ──→ 五个执行岗
-  定一个主目标      拆成各自唯一任务
+Department Lead ──→ five execution roles
+  one target          one task each
 ```
 
-| 节点 | 交出什么 | 验收标准 |
+| Link | Handoff | Acceptance |
 |---|---|---|
-| 负责人 → 五岗 | 主目标 + 五岗任务表 | 主目标只有一个，每岗任务只有一个 |
-| 任务表 → 交付 | 每项带交付物、截止、验收标准 | 三项齐，缺一不算拆完 |
+| Lead → roles | Target + role task table | Exactly one target; exactly one task per role |
+| Task table → delivery | Each task has deliverable, deadline, acceptance criteria | All three, or it isn't broken down |
 
-没有这一步，后面四条链路会自己长出来 —— 每个岗都在干活，方向是散的。**这是最常见的浪费，而且不容易被发现，因为所有人都很忙。**
+Without this, chains 1–4 still happen — every role stays busy and the direction is scattered. **This is the most common form of waste, and the hardest to notice, because everyone looks busy.**
 
-## 每日循环（背景节奏，不属于链路）
-
-```
-每日 09:00  竞品岗出日报  →  负责人看异常  →  派当日任务  →  各岗执行
-```
-
-日报是三件事的源头：
-
-- **今天的选题** —— 新出现有展现的词
-- **今天的排查** —— 超 7 天未收录的内容
-- **今天的优先级** —— 哪个指标掉了 30% 以上
-
-没有日报的时候，每天第一件事是"今天该干什么"；有了日报，第一件事是"哪里不对"。这两种状态的工作质量差很远。
-
-## 链路一：常规内容生产
+## Chain 1: Routine content
 
 ```
-竞品收集分析师 → SEO优化师 → 内容编辑师（写→改→发） → SEO优化师 → 网站品牌运营师
-   定选题            定词            出稿并发布           收录推送      站点同步发布
+Competitor Analyst → SEO → Content Editor (write→adapt→publish) → SEO → Brand Operator
+   pick topics         keywords    draft and publish            submit    sync to owned site
 ```
 
-| 节点 | 交出什么 | 验收标准 |
+| Link | Handoff | Acceptance |
 |---|---|---|
-| 情报 → 选词 | 本周客户高频问题清单 | 问题来自真实咨询，不是拍脑袋 |
-| 选词 → 写稿 | 目标词 + 3 个备选标题 + 战场标记 | 明确是争排名还是争 AI 引用 |
-| 写稿 → 发布 | 各平台定稿 + 发布排期 | 每平台有实质差异，红线已过 |
-| 发布 → 推送 | 可访问链接 + 首日数据 | 真实链接验收过，不是后台预览 |
-| 推送 → 站点 | 主站定稿 + 内链要求 | 品牌岗按 CMS 规范上线 |
+| Intel → keywords | This week's real customer questions | Sourced from actual inquiries, not guesswork |
+| Keywords → draft | Target term + 3 title options + battleground | Clear whether it's for ranking or for AI citation |
+| Draft → publish | Per-platform finals + schedule | Real differences between platforms, red lines cleared |
+| Publish → submit | Live URLs + first-day data | Verified on the real URL, not a backend preview |
+| Submit → site | Final copy + internal link requirements | Brand Operator publishes per CMS conventions |
 
-**发布归属**：第三方平台编辑岗自己发，自有站点交品牌岗，收录推送回 SEO 岗。
-不要三边都碰，也不要三边都不管 —— 这是最容易出事的地方。
+**Publishing ownership**: third-party platforms — the Editor publishes them; owned sites — the Brand Operator; index submission — SEO. Don't have all three touch it, and don't have none of them.
 
-**常见断点**：情报岗给了一堆数据但没给选题，编辑岗拿不到具体问题就只能写产品介绍。这是整条链路最容易塌的地方。
+**Most common break**: intel delivers a pile of data with no topics, so the Editor has nothing to write about and defaults to product brochures.
 
-## 链路二：新站点或改版
-
-```
-网站品牌运营师 → SEO优化师 → 内容编辑师 → 网站品牌运营师
-   结构方案         词与内链      填充内容      上线验证
-```
-
-改版前必做三件事：全站备份、旧 URL 到新 URL 的映射表、上线后的逐页验证。
-少了映射表，历史收录会大面积失效，相当于重新从零开始。
-
-## 链路三：询盘承接
+## Chain 2: New site or redesign
 
 ```
-SEO/内容带来流量 → 客服转化专员 → 竞品收集分析师
-      获客              成交           复盘归因
+Brand Operator → SEO → Content Editor → Brand Operator
+   structure       terms + links    fill content     verify live
 ```
 
-成交后把咨询原话回传给竞品岗，作为下一轮选题的输入。**闭环才叫复盘**，不回流就只是一次性生意。
+Before any redesign, three things are mandatory: full backup, old-URL-to-new-URL map, page-by-page verification after launch.
+Skip the map and historic indexed pages break en masse — you start over from zero.
 
-## 链路四：突发问题
-
-站点挂了、收录掉了、账号被限：
+## Chain 3: Inquiry handling
 
 ```
-网站品牌运营师（技术侧） → SEO优化师（收录侧） → 内容编辑师（内容侧）
+SEO / content creates traffic → Customer Conversion → Competitor Analyst
+        acquisition                close              attribution
 ```
 
-先确认是不是技术原因，排除后再怀疑内容和平台规则。
-顺序错了会在无关方向浪费大量时间 —— 比如站点被 CDN 挡了，却花两周改写内容。
+After closing, route the customer's actual words back to the Analyst as input for the next topic cycle. **The loop is what makes it a review** — without feedback it's a one-off sale.
 
-## 跨岗通用约定
+## Chain 4: Incidents
 
-1. 交接物一律落文件，不用口头描述
-2. 任何岗位交付前自查 `references/profile.local.md` 的合规红线
-3. 涉及对外发布的，最后一步都归网站品牌运营师确认一致性（品牌名、主体名、联系方式）
-4. 复盘数据由竞品收集分析师统一出，避免各岗各算一套口径
-5. 一个任务只由主岗负责到底，协作岗只给输入，不并行改同一样东西
+Site down, index collapsed, account restricted:
+
+```
+Brand Operator (technical) → SEO (indexing) → Content Editor (content)
+```
+
+Rule out technical causes first, then indexing, then platform rules and content.
+Getting the order wrong wastes weeks — e.g. a CDN blocking crawlers while you spend two weeks rewriting copy.
+
+## Cross-role conventions
+
+1. Handoff artifacts are files, never verbal descriptions
+2. Every role checks the red lines in `references/profile.local.md` before delivery
+3. Anything published externally ends with the Brand Operator confirming consistency (brand name, entity name, contact details)
+4. The Competitor Analyst produces all review metrics, so no two roles compute the same number differently
+5. One task has one owning role. Collaborating roles provide input; they don't edit the same artifact in parallel.

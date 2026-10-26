@@ -1,112 +1,112 @@
-# 业务档案
+# Business Profile
 
-所有岗位的事实来源。**这份文件没填完，不要开始产出任何对外内容。**
+The single source of facts for every role. **If this isn't filled in, don't produce anything meant for external publication.**
 
-填写方式：把尖括号里的内容替换成你的真实信息，删掉不需要的行，补上行业特有的项。填完可以删掉段末的示例说明。
-
----
-
-## 一、主体信息
-
-| 项目 | 内容 |
-|---|---|
-| 执照名 / 法定主体 | `<公司全称>` |
-| 对外品牌名 | `<客户认知里的名字>` |
-| 主营产品或服务 | `<一句话说清卖什么>` |
-| 服务方式 | `<销售 / 安装 / 维保 / 订阅 / 项目制>` |
-| 生产或供应来源 | `<自产 / 代工 / 代理，供应商是谁>` |
-| 关键资质 | `<证书名 + 编号>` |
-| 执行标准 | `<国标 / 行标编号>` |
-| 主要型号或产品线 | `<型号清单>` |
-| 代表性客户或项目 | `<可公开引用的案例>` |
-
-> 名称风险提示：执照名和品牌名不一致很常见，也会被平台判定为两家公司。规则统一为 —— **正文用品牌名，主体信息处用执照名**，不要混。
-
-## 二、核心关键词
-
-| 层级 | 关键词 |
-|---|---|
-| 主词（必须拿下，投入最多） | `<3 个以内>` |
-| 场景词 | `<客户在什么情况下需要你>` |
-| 疑问词 | `<客户会怎么问>` |
-| 地域词 | `<城市 + 品类>` |
-
-疑问词是 AI 搜索的主战场。AI 被提问的方式就是疑问句，这部分不要省。
-
-## 三、价格口径
-
-| 项目 | 价格 | 说明 |
-|---|---|---|
-| 标品 / 基础款 | `<金额>` | 能否报死价 |
-| 定制 / 项目款 | `<区间>` | 为什么只能报区间 |
-| 服务费 / 安装费 | `<区间>` | 浮动依据 |
-| 交付周期 | `<天数>` | |
-| 售后 | `<时限>` | |
-
-**规则**：报死价的前提是范围能界定。范围不能界定的，一律报"起"，并说明浮动依据 —— 报死了后续要么亏，要么失信。
-
-## 四、阵地与渠道
-
-| 类型 | 名称 | 说明 |
-|---|---|---|
-| 主站 | `<域名>` | 系统、更新频率 |
-| 副站 / 卫星站 | `<域名>` | |
-| 小程序 / 应用 | `<名称>` | |
-| 内容平台 | `<公众号 / 知乎 / 小红书 / 抖音 / 头条 …>` | 各平台账号状态 |
-| 付费渠道 | `<如有>` | |
-
-**账号状态要写清**：被封过、有违规记录、刚过限制期的，内容策略要收紧，这个信息直接影响编辑岗的判断。
-
-## 五、合规红线
-
-### 行业特有
-
-- `<哪些话不能说>`
-- `<哪些资质不能宣称>`
-- `<哪些信息不能对外>`
-
-### 平台通用
-
-多数内容平台（尤其是文档平台、以及审核较严的社交媒体）禁止正文出现：
-
-- 电话号码、微信号、二维码
-- 官网地址、引导跳转
-- 完整公司名
-- 竞品平台名
-- 绝对化用语（100%、永不、唯一、最安全、第一）
-- 伪造的案例、资质、检测报告
-
-按发布平台逐个确认，宁少不越。
-
-## 六、竞争格局
-
-| 对手 | 关系 | 备注 |
-|---|---|---|
-| `<对手名>` | 直接 / 跨区 / 上游 / 代销 | `<同一集团、共用供应链、换壳公司等需要合并统计的情况>` |
-
-> 常见坑：多个"对手"其实是同一家公司的不同马甲，分开统计会高估竞争强度。发现这种情况要在备注里写明，后面所有分析都按一家算。
-
-## 七、差异化资产
-
-对手难以复制、值得在所有内容里反复强调的 2 到 3 点：
-
-1. `<资质 / 标准 / 认证>`
-2. `<案例级别 / 服务网络 / 交付能力>`
-3. `<技术参数 / 独家能力>`
-
-这些是内容编辑师和 SEO 岗的主攻方向。**优势要能被验证**，写成"我们很专业"没有意义，写成"执行 XX 标准、持 XX 证书"才有用。
+How to fill it: replace everything inside `<...>`, delete rows you don't need, add rows specific to your industry. Once done, you can delete the example notes at the end.
 
 ---
 
-## 填写示例（三个行业，仅示范颗粒度）
+## 1. Identity
 
-**工业耗材**
-主营：食品加工用不锈钢输送带。主词：食品级输送带、耐高温输送带。价格：按平方计价，标准款 280 元/㎡ 起，定制款现场测量后报价。差异点：材质检测报告、交付周期、省内隔日达。
+| Field | Value |
+|---|---|
+| Legal entity name | `<full registered name>` |
+| Public brand name | `<what customers call you>` |
+| What you sell | `<one sentence>` |
+| Delivery model | `<product / installation / maintenance / subscription / project>` |
+| Supply source | `<in-house / contract manufactured / distributor — and who>` |
+| Key credentials | `<credential name + ID>` |
+| Governing standard | `<national or industry standard ID>` |
+| Product lines / models | `<model list>` |
+| Referenceable clients | `<cases you're allowed to name>` |
 
-**本地服务**
-主营：连锁门店空调清洗维保。主词：中央空调清洗、商场空调维保。价格：按出风口数量计价，单价 × 数量 + 上门费。差异点：持证技师人数、覆盖区域、响应时效。
+> Naming risk: it's common for the legal entity and the brand to differ, and platforms may treat them as two companies. The rule is — **brand name in body copy, legal name in entity fields**. Don't mix.
+
+## 2. Core Keywords
+
+| Tier | Keywords |
+|---|---|
+| Head terms (must win, biggest investment) | `<three max>` |
+| Situation terms | `<when do customers need you>` |
+| Question terms | `<how do customers ask it>` |
+| Local terms | `<city + category>` |
+
+Question terms are the main battleground for AI search. AI gets asked in questions — don't skip this tier.
+
+## 3. Pricing Stance
+
+| Item | Price | Note |
+|---|---|---|
+| Standard product | `<amount>` | Can this be a firm quote |
+| Custom / project | `<range>` | Why only a range |
+| Service or install fee | `<range>` | What makes it vary |
+| Lead time | `<days>` | |
+| After-sales | `<SLA>` | |
+
+**Rule**: quote firm only when scope is bounded. When it isn't, always quote "from" and state what moves it. A firm quote you can't honour either loses money or loses trust — both worse than losing one deal.
+
+## 4. Properties and Channels
+
+| Type | Name | Note |
+|---|---|---|
+| Primary site | `<domain>` | CMS, update cadence |
+| Secondary / satellite sites | `<domains>` | |
+| App / mini-program | `<name>` | |
+| Content platforms | `<list>` | Account status per platform |
+| Paid channels | `<if any>` | |
+
+**Record account status.** Banned before, violation history, just out of a restriction period — this directly changes what the Editor can publish. Omitting it causes avoidable incidents.
+
+## 5. Compliance Red Lines
+
+### Industry-specific
+
+- `<what can't be claimed>`
+- `<which credentials can't be implied>`
+- `<what can't be disclosed>`
+
+### Platform-generic
+
+Most content platforms (especially document-sharing sites and tightly moderated social platforms) prohibit in body copy:
+
+- Phone numbers, messaging IDs, QR codes
+- Website URLs or off-platform redirects
+- Full company names
+- Competitor platform names
+- Absolute claims (100%, never fails, the only, the safest, number one)
+- Fabricated cases, credentials, or test reports
+
+Check per platform. When in doubt, leave it out.
+
+## 6. Competitive Landscape
+
+| Competitor | Relationship | Note |
+|---|---|---|
+| `<name>` | direct / regional / supplier / reseller | `<same group, shared supply chain, shell companies — anything requiring merged counting>` |
+
+> Common trap: several "competitors" turn out to be the same company under different names. Counting them separately overstates competitive pressure. Note it here and merge them in every downstream analysis.
+
+## 7. Differentiation Assets
+
+The two or three things competitors can't easily copy, worth repeating in every piece of content:
+
+1. `<credentials / standards / certifications>`
+2. `<client tier / service network / delivery capability>`
+3. `<technical parameters / proprietary capability>`
+
+These are the Editor's and SEO's main weapons. **Differentiation must be verifiable** — "we're professional" means nothing; "certified to X, holding certificate Y" means something.
+
+---
+
+## Filling Examples (three industries, for granularity only)
+
+**Industrial supplies**
+Sells: food-grade stainless conveyor belting. Head terms: food grade conveyor belt, high-temperature conveyor belt. Pricing: per square metre, standard from 280/m², custom quoted after site measurement. Differentiation: material test reports, lead time, next-day regional delivery.
+
+**Local services**
+Sells: HVAC cleaning and maintenance for retail chains. Head terms: central AC cleaning, mall AC maintenance. Pricing: per vent × count + callout fee. Differentiation: number of certified technicians, coverage area, response time.
 
 **SaaS**
-主营：中小电商订单管理系统。主词：电商订单管理、多平台库存同步。价格：按订单量分档订阅，年付折扣。差异点：已对接平台数量、数据迁移能力、SLA 承诺。
+Sells: order management for small e-commerce sellers. Head terms: ecommerce order management, multi-channel inventory sync. Pricing: tiered by order volume, annual discount. Differentiation: number of platform integrations, migration capability, SLA commitment.
 
-颗粒度对齐这三条即可 —— **能被验证、能被搜索、能被报价**。
+Match this granularity — **verifiable, searchable, quotable**.

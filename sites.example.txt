@@ -1,6 +1,6 @@
-# 站点体检列表
-# 每行一个 URL，# 开头为注释
-# 复制为 sites.local.txt 后填入真实站点（该文件已被 gitignore）
+# Site health check list
+# One URL per line, lines starting with # are comments
+# Copy to sites.local.txt and fill in your real sites (that file is gitignored)
 
 https://example.com
 https://example.org
